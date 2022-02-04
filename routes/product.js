@@ -23,7 +23,7 @@ router.delete('/delP/:id',auth,async (req,res)=>{
     }
 })
 
-router.put('/edP/:id',auth,async (req,res)=>{
+router.put('/editP/:id',auth,async (req,res)=>{
     try {
         const updatedProduct = await Product.findByIdAndUpdate(
             req.params.id,
