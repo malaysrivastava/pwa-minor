@@ -1,0 +1,25 @@
+body {
+    background-image: url('https://www.juit.ac.in/front/images/banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    /* filter: blur(2px);
+    -webkit-filter: blur(2px); */
+  
+  
+}
+.Gsuit{
+    padding-top: 25px;
+ 
+ }
+.progress{
+    padding-top: 15px;
+    width: 11rem;
+    margin: auto;
+}
+.created{
+  padding:15px ;
+    font-family: 'Times New Roman', Times, serif;
+}

@@ -7,11 +7,11 @@ const View=({keyword,responseSuccessGoogle,responseErrorGoogle,counter,isLogged,
 
    return(
        <div>
-       <h1>{keyword}</h1>
+       {/* <h1>{keyword}</h1>
        <h2>Counter {counter}</h2>
         <button onClick={()=>dispatch(increment())}>+</button>
         <button onClick={()=>dispatch(decrement())}>-</button>
-       {isLogged && <h3>Hello Logged in</h3> }
+       {isLogged && <h3>Hello Logged in</h3> } */}
        <GoogleLogin
             clientId="233905196668-6010oh4hlatb7bna850l7tu8tc4hj2v4.apps.googleusercontent.com"
             buttonText="Login with GSUITE"
