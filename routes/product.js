@@ -38,4 +38,44 @@ router.put('/editP/:id',auth,async (req,res)=>{
     }
 })
 
+router.get('/',auth,async (req,res)=>{
+    const qNew = req.query.new;
+    const qCategory = req.query.category;
+    const userID = req.query.userid;
+    try {
+        let products;
+        if(qNew){
+            products = await Product.find().sort({createdAt:-1}).limit(5)
+        } else if(qCategory){
+            products = await Product.find({
+                categories :{
+                    $in: [qCategory],
+                },
+            });
+        }else if(userID){
+            products = await Product.find({
+                 userID:userID,
+            });
+        } 
+        else{
+            products = await Product.find();
+        }
+        return res.status(200).json(products);
+    } catch (error) {
+        return res.status(500).json(err);
+    }
+})
+
+router.get('/:id',auth,async (req,res)=>{
+    try {
+        let product;
+        product = await Product.find({
+            _id:req.params.id,
+       });
+       return res.status(200).json(product);
+    } catch (error) {
+        return res.status(500).json(err);
+    }
+})
+
 module.exports = router;
