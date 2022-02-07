@@ -1,13 +1,11 @@
  const User = require('../models/user')
  const jwt = require('jsonwebtoken')
- const expressJWT = require('express-jwt')
  const _ = require('lodash')
  const {OAuth2Client} = require('google-auth-library')
  const client =  new OAuth2Client(process.env.CLIENT_ID) 
 
- const mailgun = require('mailgun-js')
- const DOMAIN = "dsfdfdffdgdg"
- const mg = mailgun({apiKey:process.env.MAILGUN_API_KEY, domain:DOMAIN});
+ 
+ var mailgun = require('mailgun-js')({apiKey: process.env.API_KEY, domain: process.env.DOMAIN});
 
 
  exports.googleLogin = (req,res)=>{

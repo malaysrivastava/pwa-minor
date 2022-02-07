@@ -20,8 +20,30 @@ var mailgun = require('mailgun-js')({apiKey: process.env.API_KEY, domain: proces
 
  exports.allProducts = async (req,res)=>{
     let products;
+    const qCategory = req.body.category;
+    const Mail = req.body.usermail;
     try {
-        products = await Product.find();
+        if(qCategory && Mail){
+            products = await Product.find({
+                categories :{
+                    $in: [qCategory],
+                },
+                userMail : Mail,
+            });
+        }else if(qCategory){
+            products = await Product.find({
+                categories :{
+                    $in: [qCategory],
+                },
+            });
+        } else if(Mail){
+            products = await Product.find({
+                userMail:Mail,
+           });
+        }else{
+            products = await Product.find();
+        }
+       
         return res.status(200).json(products);
     } catch (error) {
         return res.status(500).json(err);
