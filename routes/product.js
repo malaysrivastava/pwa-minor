@@ -16,6 +16,7 @@ router.post('/addP',auth, async (req,res)=>{
 
 router.delete('/delP/:id',auth,async (req,res)=>{
     try {
+        
         await Product.findByIdAndDelete(req.params.id);
         return res.status(200).json("Product has been deleted")
     } catch (error) {
