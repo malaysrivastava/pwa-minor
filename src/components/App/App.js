@@ -8,7 +8,7 @@ import { Product } from "../Product";
 
 const App = () => {
   return (
-    <>
+    
       <Router>
       <Navbar/>
         <Routes>
@@ -19,7 +19,6 @@ const App = () => {
       <Footer/>
       </Router>
 
-    </>
   );
 }
 

@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser}) => {
     return (
-        <AppBar position="fixed" style={{ background: 'tomato' }}>
+        <AppBar position="" style={{ background: 'tomato'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
