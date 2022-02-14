@@ -1,13 +1,9 @@
 import React from "react";
-import {Home} from '../Home'
-import {Landing} from "../Landing"
+import {AddProduct} from "../AddProduct"
 
 const App=()=> {
   return (
-    <div className="App">
-      {/* <Home/> */}
-      <Landing/>
-    </div>
+   <AddProduct/>
   );
 }
 

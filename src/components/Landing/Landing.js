@@ -1,6 +1,5 @@
 import React from 'react';
 import { Home } from '../Home'
-// import '../Landing/landing.css';
 import {Grid,Paper} from '@material-ui/core'
 import LinearProgress from '@mui/material/LinearProgress';
 

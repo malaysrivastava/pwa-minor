@@ -13,7 +13,7 @@ const Home =()=>{
        
         axios({
             method:"POST",
-            url:"http://localhost:8000/api/googlelogin",
+            url:"http://localhost:8000/api/auth/googlelogin",
             data:{tokenId:response.tokenId}
         })
         .then(response=>{
