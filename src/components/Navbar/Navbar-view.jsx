@@ -38,7 +38,6 @@ const View = () => {
     };
 
     return (
-        <>
         <AppBar position="fixed" style={{ background: 'tomato' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -149,14 +148,7 @@ const View = () => {
                 </Toolbar>
             </Container>
         </AppBar>
-        <div className="small_Nav" style={{backgroundColor:'whitesmoke' , padding:'5px'}}>
-        <div className="inside">
-          All Categories Malay Chicha aap dekh lena isme kya krna hai
         
-
-        </div>
-      </div>
-      </>
     );
 };
 export default View;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Navbar } from "../Navbar";
 import {Footer} from '../Footer'
 
 const View=()=>{
@@ -7,6 +8,7 @@ const View=()=>{
    return(
        <div className="home">
            
+           <Navbar/>
           
            <p>hello</p>
            <p>hello</p>
