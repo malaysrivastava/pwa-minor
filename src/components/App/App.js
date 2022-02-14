@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Route,Routes} from "react-router-dom"
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 import React from "react";
 import {Home} from '../Home'
 // import { Landing } from "../Landing";
@@ -9,11 +9,11 @@ const App = () => {
     <>
       <Router>
       {/* <Header/> */}
-        <Routes>
+        <Switch>
       {/* <Route path="/" element={<Landing/>} /> */}
       <Route path="/" element={<Home/>} />
       <Route path="/Product" element={<Product/>} />
-      </Routes>
+      </Switch>
 
       </Router>
 
