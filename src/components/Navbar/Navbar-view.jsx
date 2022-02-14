@@ -11,11 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useHistory } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 
 const View = () => {
-    const navigate = useHistory();
+    const navigate = Navigate();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -148,7 +148,6 @@ const View = () => {
                 </Toolbar>
             </Container>
         </AppBar>
-        
-    );
+    )
 };
 export default View;
