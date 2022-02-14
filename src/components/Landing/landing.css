@@ -1,17 +1,21 @@
 body {
-    background-image: url('https://www.juit.ac.in/front/images/banner.jpg');
+    /* background-image: url('https://www.juit.ac.in/front/images/banner.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    overflow: hidden;
-    /* filter: blur(2px);
+    overflow: hidden; 
+     filter: blur(2px);
     -webkit-filter: blur(2px); */
   
   
 }
+img{
+    margin-left: 75px;
+}
 .Gsuit{
     padding-top: 25px;
+    padding-left: 42px;
  
  }
 .progress{
@@ -20,6 +24,7 @@ body {
     margin: auto;
 }
 .created{
-  padding:15px ;
+  padding-top:20px ;
+  padding-left: 42px;
     font-family: 'Times New Roman', Times, serif;
 }
