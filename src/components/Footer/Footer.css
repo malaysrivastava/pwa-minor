@@ -1,4 +1,7 @@
 .footer{
+    /* display:'flex';
+    align-items: flex-end; */
+    top: 120%;
     position: absolute;
     bottom: 0;
     left: 0;

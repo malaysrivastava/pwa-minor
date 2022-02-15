@@ -1,0 +1,7 @@
+.small_Nav{
+    background-color: black;
+}
+.inside{
+    display: flex;
+    justify-content: space-around;
+}

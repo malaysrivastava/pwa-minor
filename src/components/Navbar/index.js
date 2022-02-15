@@ -1,2 +1,2 @@
-// import './Navbar.css';
+import './Navbar.css';
 export {default as Navbar} from './Navbar'

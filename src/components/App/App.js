@@ -5,12 +5,14 @@ import {Home} from '../Home'
 import { Navbar } from "../Navbar";
 import {Footer} from "../Footer"
 import { Product } from "../Product";
+import {Banner} from '../Banner';
 
 const App = () => {
   return (
     
       <Router>
       <Navbar/>
+      <Banner/>
         <Routes>
       {/* <Route path="/" element={<Landing/>} /> */}
       <Route path="/" element={<Home/>} />
