@@ -8,7 +8,7 @@ const View=()=>{
    return(
        <div className="home">
            
-           <Navbar/>
+           {/* <Navbar/> */}
           
            <p>hello</p>
            <p>hello</p>
