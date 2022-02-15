@@ -11,34 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
 
 
-const View = () => {
-    const navigate = useNavigate();
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = (pageUrl) => {
-        setAnchorElNav(null);
-        console.log('clicked')
-        console.log(navigate)
-        navigate(pageUrl);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
+const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser}) => {
     return (
-        <AppBar position="fixed" style={{ background: 'tomato' }}>
+        <AppBar position="" style={{ background: 'tomato'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -148,7 +125,6 @@ const View = () => {
                 </Toolbar>
             </Container>
         </AppBar>
-        
-    );
+    )
 };
 export default View;
