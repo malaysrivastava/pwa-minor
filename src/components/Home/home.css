@@ -1,0 +1,29 @@
+.dev_box{
+    background-color: tomato;
+    margin-top: 60px;
+}
+.trending_text{
+    padding: 27px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    font-weight: 600;
+    
+}
+.dev_name{
+    text-align: center;
+    font-size: 25px;
+    color: whitesmoke;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.image{
+    width: 100%;
+    max-height: 150px;
+}
+.items{
+    padding: 25px;
+    background-color: tomato;
+}

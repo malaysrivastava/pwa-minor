@@ -7,6 +7,7 @@ import {Footer} from "../Footer"
 import { Product } from "../Product";
 import {Banner} from '../Banner';
 
+
 const App = () => {
   return (
     
