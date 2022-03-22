@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className='cat-5'>
             Cat-5
             </div>
-            
+            {/* Master Developer Malay */}
         
 
         </div>
