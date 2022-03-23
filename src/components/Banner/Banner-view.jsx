@@ -3,7 +3,7 @@ import {Grid} from '@material-ui/core'
 
 const View = () => {
     const gridStyle={
-        padding:12,
+        padding:0,
         height:'43vh',
         width:1860,
         // margin:'1px auto',
@@ -31,7 +31,7 @@ const View = () => {
      {/* <Paper elevation={10} style={paperStyle}> */}
 
         
-        <img src="../Amazone.jpg" alt=""></img>
+        <img style={{'opacity':'80%',width:'100%',margin:'0',padding:'0'}} src='../Amazone.jpg' alt=""></img>
         {/* </Paper> */}
         </Grid>
      </Grid>

@@ -27,3 +27,20 @@
     padding: 25px;
     background-color: tomato;
 }
+
+.slider
+div
+.image{
+    width: 90%;
+}
+
+.slider
+div
+p{
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-between;
+    text-align: center;
+    width: 90%;
+    background-color: aliceblue;
+}

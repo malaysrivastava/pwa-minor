@@ -45,19 +45,19 @@ return(
       <div className="small_Nav" style={{backgroundColor:'whitesmoke' , padding:'5px'}}>
         <div className="inside">
           <div className='cat-1'>
-            Cat-1
+            Stationary
           </div>
           <div className='cat-2'>
-            Cat-2
+            Gadgets
             </div>
             <div className='cat-3'>
-            Cat-3
+            Miscellaneous
             </div>
             <div className='cat-4'>
-            Cat-4
+            Cosmetics
             </div>
             <div className='cat-5'>
-            Cat-5
+            Room decor
             </div>
          
         

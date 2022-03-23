@@ -45,12 +45,7 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
             onFailure={responseErrorGoogle}
             cookiePolicy={'single_host_origin'}
         />
-      </div>
-      <div className="created">
-      <h5>
-       ~ Created by Mohit -- Malay
-      </h5>
-      </div>
+      </div> */}
       
       </Paper>
       

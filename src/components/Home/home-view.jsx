@@ -55,42 +55,65 @@ const View = () => {
 
     return (
         <div className="home">
-
-            {/* <p>hello</p>
-            <p>hello</p>
-            <p>hello</p>
-            <p>hello</p>
-            <p>hello</p>
-            <p>hello</p>
-            <p>hello</p> */}
-            {/* <Container> */}
            
             <div className="items">
         <h2 className="trending_text"> Top 20 trending items..</h2>
-        <Slider {...settings}>
+        <Slider className="slider" {...settings}>
           <div>
-            <img className="image" src='../Amazone.jpg'/>
+            <img className="image" src='https://miro.medium.com/max/640/0*wJ1H_ArMVuZR-wwm.png'/>
+            <p>
+              <b>Rs 500</b>
+              <b>H4-28</b>
+            </p>
+          </div>
+          <div>
+          <img className="image" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kwjbXUhtAJljpntW9136Kb53aULjExh40w&usqp=CAU'/>
+          <p>
+              <b>Rs 150</b>
+              <b>H15-10</b>
+            </p>
+          </div>
+          <div>
+          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/9cwja3u6m6ai3-IN/image;s=780x0;q=60'/>
+          <p>
+              <b>Rs 25000</b>
+              <b>H11-42A</b>
+            </p>
+          </div>
+          <div>
+          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/jssg3r1xsiph2-IN/image;s=780x0;q=60'/>
+          <p>
+              <b>Rs 1500</b>
+              <b>H1-8</b>
+            </p>
+          </div>
+          <div>
+          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/y0gn9flb856t2-IN/image;s=780x0;q=60'/>
+          <p>
+              <b>Rs 500</b>
+              <b>H4-28</b>
+            </p>
           </div>
           <div>
           <img className="image" src='../Amazone.jpg'/>
+          <p>
+              <b>Rs 500</b>
+              <b>H4-28</b>
+            </p>
           </div>
           <div>
           <img className="image" src='../Amazone.jpg'/>
+          <p>
+              <b>Rs 500</b>
+              <b>H4-28</b>
+            </p>
           </div>
           <div>
           <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
+          <p>
+              <b>Rs 500</b>
+              <b>H4-28</b>
+            </p>
           </div>
         </Slider>
             </div>
