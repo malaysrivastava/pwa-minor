@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import View from './Navbar-view';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -26,7 +26,21 @@ const Navbar = () => {
         setAnchorElUser(null);
     };
 
-  return( <div>
+  const [show,setShow] = useState(true);
+  var excp = window.location.pathname;
+
+  useEffect(()=>{
+  console.log(excp)
+    if(excp=='/login'){
+      setShow(false);
+    }else{
+      setShow(true);
+    }
+  },[2])
+  
+if(show){
+return( 
+      <div>
       <View {...{handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser}}/>
       <div className="small_Nav" style={{backgroundColor:'whitesmoke' , padding:'5px'}}>
         <div className="inside">
@@ -53,6 +67,12 @@ const Navbar = () => {
      
   </div>
   );
-};
+} else {
+  console.log("check")
+  return(
+    <></>
+  )
+}
+}
 
 export default Navbar;
