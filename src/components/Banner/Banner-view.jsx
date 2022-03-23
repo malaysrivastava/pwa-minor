@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import {Grid} from '@material-ui/core'
 
 const View = () => {
@@ -9,6 +9,20 @@ const View = () => {
         // margin:'1px auto',
         backgroundColor:''
       }
+
+      const [show,setShow] = useState(true);
+      var excp = window.location.pathname;
+    
+      useEffect(()=>{
+      console.log(excp)
+        if(excp=='/login'){
+          setShow(false);
+        }else{
+          setShow(true);
+        }
+      },[2])
+
+      if(show){
     return (
         <div>
  
@@ -29,5 +43,8 @@ const View = () => {
         
        
     )
+} else {
+    return (<></>)
+}
 }
 export default View;
