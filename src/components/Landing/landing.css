@@ -10,21 +10,25 @@ body {
   
   
 }
+.googLog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jmg{
+    width: 80%;
+    height: 20vh;
+}
+
+.jmg
 img{
-    margin-left: 75px;
+    width: 100%;
 }
 .Gsuit{
-    padding-top: 25px;
-    padding-left: 42px;
  
  }
 .progress{
-    padding-top: 15px;
-    width: 11rem;
-    margin: auto;
 }
 .created{
-  padding-top:20px ;
-  padding-left: 42px;
     font-family: 'Times New Roman', Times, serif;
 }

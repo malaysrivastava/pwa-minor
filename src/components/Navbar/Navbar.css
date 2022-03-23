@@ -5,3 +5,7 @@
     display: flex;
     justify-content: space-around;
 }
+.inside
+div{
+    cursor: pointer;
+}
