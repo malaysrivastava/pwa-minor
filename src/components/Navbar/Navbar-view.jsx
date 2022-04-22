@@ -19,7 +19,7 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h5"
+                      variant="h5"
                         noWrap
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -57,13 +57,13 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
                             }}
                         >
                            
-                             <MenuItem key={1} onClick={()=>handleCloseNavMenu('/product')}>
+                             <MenuItem key={1} onClick={()=>handleCloseNavMenu('/')}>
                                     <Typography textAlign="center">Products</Typography>
                                 </MenuItem>
-                                <MenuItem key={2} onClick={()=>handleCloseNavMenu('/product')}>
+                                <MenuItem key={2} onClick={()=>handleCloseNavMenu('/addproduct')}>
                                     <Typography textAlign="center">Add Products</Typography>
                                 </MenuItem>
-                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/product')}>
+                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/')}>
                                     <Typography textAlign="center">Favorites</Typography>
                                 </MenuItem>
                         </Menu>
@@ -81,7 +81,7 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
                         <Button
                             onClick={()=>handleCloseNavMenu('/product')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Products</Button>
-                        <Button onClick={()=>handleCloseNavMenu('/product')}
+                        <Button onClick={()=>handleCloseNavMenu('/addproduct')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Add Products</Button>
                         <Button onClick={()=>handleCloseNavMenu('/product')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Favorites</Button>

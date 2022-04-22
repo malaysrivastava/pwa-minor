@@ -6,6 +6,8 @@ import {Footer} from "../Footer"
 import { Product } from "../Product";
 import {Banner} from '../Banner';
 import {Landing} from '../Landing';
+import {AddProduct} from '../AddProduct'
+import { ViewImage } from "../ViewImage";
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
       <Navbar/>
       <Banner/>
         <Routes>
+        <Route path="/viewImage" element={<ViewImage/>} />
+        <Route path="/addproduct" element={<AddProduct/>} />
       <Route path="/login" element={<Landing/>} />
       <Route path="/" element={<Home/>} />
       <Route path="/Product" element={<Product/>} />

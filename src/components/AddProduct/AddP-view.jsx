@@ -1,136 +1,138 @@
-import React from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
-import { useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import { TextField } from "@material-ui/core";
+import React, { useState } from "react";
+import { FormGroup } from '@material-ui/core';
+import Button from '@mui/material/Button';
+import { Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core"
+import Autocomplete from '@mui/material/Autocomplete';
+import {makeStyles} from "@material-ui/core"
 
+const top100Films = [
+  { label: 'The Shawshank Redemption', year: 1994 },
+  { label: 'The Godfather', year: 1972 },
+  { label: 'The Godfather: Part II', year: 1974 },
+  { label: 'The Dark Knight', year: 2008 },
+  { label: '12 Angry Men', year: 1957 },
+  { label: "Schindler's List", year: 1993 },
+  { label: 'Pulp Fiction', year: 1994 },
+]
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
-];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
+const useStyles = makeStyles((theme) =>({
+paperStyle:{
+  [theme.breakpoints.up("sm")]:{
+    width:'1300',
+    backgroundColor:'black'
+  }
 }
+}));
+
+const AddPView = () => {
+  const classes=useStyles();
+  const [imagePreview, setImagePreview] = useState("");
+  const paperStyle = {
+    padding: 5,
+    height: '85vh',
+    width: 370,
+    margin: '5px auto',
+   
+  }
+  const fileHandle = e => {
+    const reader = new FileReader();           // babel javascript class
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  }
+
+  return (
+    <Grid  >
+    {/* <Grid item xs={12} md={6} style={{backgroundColor:'black'}}> */}
+      <Paper elevation={10}  style={paperStyle}>
+        <Grid align="center">
+          <div className="text">
+            <p>Add Product</p>
+          </div>
+        </Grid>
+        <FormGroup className="form" noValidate autoComplete="on">
+
+          {/*  
+  <InputLabel id="demo-multiple-name-label">Name</InputLabel> */}
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={top100Films}
+            sx={{ width: 250 }}
+            renderInput={(params) => <TextField {...params} label="Category" />}
+          />
+          <TextField
+            label="Title"
+            // className={classes.textField}
+            name='title'
+            style={{ width: 250 }}
+          />
 
 
-
-const AddPView=()=>{
- 
-    const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
-
-    return(
-        <Box
-      sx={{
-        width: 300,
-        height: 300,
-        backgroundColor: 'primary.dark',
+          <TextField
+            label="Price"
+            type="number"
+            // className={classes.textField}
+            name='price'
+            style={{ width: 250 }}
+          />
+          <TextField
+            id="filled-multiline-static"
+            label="Description"
+            multiline
+            rows={3}
+            variant="filled"
+            name='desc'
+            style={{ width: 250 }}
+          />
+          <TextField
+            label="Hostel Address"
+           
+            // className={classes.textField}
+            name='add'
+            style={{ width: 250 }}
+          />
        
-      }}
-    >
-     <FormControl>
+           
+          
+          <div className="imagePreview">
+            
+            {imagePreview ? <img src={imagePreview} /> : ''}
+           </div>
+           <input
+        type="file"
+        accept="image/*"
+        style={{ display: 'none' }}
+        onChange={fileHandle}
+        id="contained-button-file"
+      />
+      <label htmlFor="contained-button-file">
+        <Button variant="contained" color="primary" component="span">
+          Upload Product Image
+        </Button>
+      </label>
 
-      <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Age
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: 'age',
-            id: 'uncontrolled-native',
-          }}
-        >
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
-        </NativeSelect>
-        <TextField
-          required
-          id="outlined-required"
-          label="Required"
-          defaultValue="Hello World"
-        />
-       
-        <TextField
-          id="outlined-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-       </FormControl>
-         <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel variant="standard" id="demo-multiple-name-label">Categories</InputLabel>
-        <Select
-          labelId="demo-multiple-name-label"
-          id="demo-multiple-name"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<OutlinedInput label="Name" />}
-          MenuProps={MenuProps}
-        >
-          {names.map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-        <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-        />
-        </FormControl>
-    </Box>
-    );
+          <Button
+    style={{
+        borderRadius: 35,
+        backgroundColor: "tomato",
+        padding: "17px 36px",
+        marginTop:'15px',
+        fontSize: "15px"
+    }}
+    variant="contained"
+    >Post
+</Button>
+        </FormGroup>
+      </Paper>
+
+    </Grid> 
+
+
+  );
 }
 
 export default AddPView;
