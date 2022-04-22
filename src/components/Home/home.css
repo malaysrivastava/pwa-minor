@@ -1,6 +1,7 @@
 .dev_box{
     background-color: tomato;
     margin-top: 60px;
+    height: 35vh;
 }
 .trending_text{
     padding: 27px;

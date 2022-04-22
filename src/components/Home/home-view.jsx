@@ -176,7 +176,7 @@ const View = () => {
                                         Mern Stack Developer
                                     </Typography>
 
-                                    <Box style={{ paddingTop: '10' }}>
+                                    <Box style={{ paddingTop: '30' }}>
                                         <Button variant="contained">Connect</Button>
                                     </Box>
 

@@ -1,4 +1,3 @@
-import { waitForElementToBeRemoved } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import wait from 'wait';

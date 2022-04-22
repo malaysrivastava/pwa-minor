@@ -23,12 +23,12 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h5"
+                      variant="h5"
                         noWrap
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        Juit Olx
+                       <Link to='/' className='logo'>Juit Olx</Link> 
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -64,10 +64,10 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                              <MenuItem key={1} onClick={()=>handleCloseNavMenu('/product')}>
                                     <Typography textAlign="center">Products</Typography>
                                 </MenuItem>
-                                <MenuItem key={2} onClick={()=>handleCloseNavMenu('/product')}>
+                                <MenuItem key={2} onClick={()=>handleCloseNavMenu('/addproduct')}>
                                     <Typography textAlign="center">Add Products</Typography>
                                 </MenuItem>
-                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/product')}>
+                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/')}>
                                     <Typography textAlign="center">Favorites</Typography>
                                 </MenuItem>
                         </Menu>
@@ -85,7 +85,7 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                         <Button
                             onClick={()=>handleCloseNavMenu('/product')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Products</Button>
-                        <Button onClick={()=>handleCloseNavMenu('/product')}
+                        <Button onClick={()=>handleCloseNavMenu('/addproduct')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Add Products</Button>
                         <Button onClick={()=>handleCloseNavMenu('/product')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Favorites</Button>
@@ -117,7 +117,7 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                                 <MenuItem key={4} onClick={logOutUser}>
                                     <Typography textAlign="center">Logout</Typography>
                                 </MenuItem>
-                                <MenuItem key={5} onClick={()=>history.push('/mypro')}>
+                                <MenuItem key={5} onClick={()=>handleCloseNavMenu('/mypro')}>
                                     <Typography textAlign="center">My Products</Typography>
                                 </MenuItem>
                                 <MenuItem key={6} onClick={handleCloseUserMenu}>

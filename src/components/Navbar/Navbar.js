@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import View from './Navbar-view';
 
-const Navbar = ({log}) => {
+const Navbar = () => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -22,6 +22,7 @@ const Navbar = ({log}) => {
     const handleCloseNavMenu = (pageUrl) => {
         setAnchorElNav(null);
         console.log('clicked')
+        history.push(pageUrl)
     };
 
     const handleCloseUserMenu = () => {
@@ -57,7 +58,7 @@ return(
             <div className='cat-5'>
             Room decor
             </div>
-            {/* Master Developer Malay */}
+         
         
 
         </div>

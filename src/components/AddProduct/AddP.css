@@ -1,0 +1,38 @@
+
+.form{
+    align-items: center;
+}
+.text{
+    background-color: tomato;
+    line-height: 35px;
+    color:whitesmoke;
+    font-size: 20px;
+    font-weight: 500;
+ 
+    
+}
+.imagePreview{
+    justify-content: space-between;
+    width: 60%;
+    height: auto;
+   padding:30px;
+    
+  }
+
+  .imagePreview img{
+    object-fit: fill;
+    align-content: center;
+    width: 80%;
+    height: 80%;
+  
+  }
+  
+  
+  .upload{
+      margin: 10px;
+  }
+.image_input{
+    color: tomato;
+    text-align: center;
+    background-color: cornsilk;
+}
