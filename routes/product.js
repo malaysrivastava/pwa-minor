@@ -42,7 +42,7 @@ router.put('/editP/:id',auth,async (req,res)=>{
 router.get('/',auth,async (req,res)=>{
     const qNew = req.query.new;
     const qCategory = req.query.category;
-    const userID = req.query.userid;
+    const userID = req.query.user_id;
     try {
         let products;
         if(qNew){
