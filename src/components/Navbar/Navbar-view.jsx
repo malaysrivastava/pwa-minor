@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory,Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +14,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser}) => {
+const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser,img}) => {
+
+     let history = useHistory();
+     
     return (
         <AppBar position="" style={{ background: 'tomato'}}>
             <Container maxWidth="xl">
@@ -74,7 +78,7 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        Juit Olx
+                       <Link to='/' className="logo">Juit Olx</Link>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                   
@@ -90,7 +94,7 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src={img} />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -110,11 +114,11 @@ const View = ({handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOp
                             onClose={handleCloseUserMenu}
                         >
                            
-                                <MenuItem key={4} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">Account</Typography>
+                                <MenuItem key={4} onClick={logOutUser}>
+                                    <Typography textAlign="center">Logout</Typography>
                                 </MenuItem>
-                                <MenuItem key={5} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">Profile</Typography>
+                                <MenuItem key={5} onClick={()=>history.push('/mypro')}>
+                                    <Typography textAlign="center">My Products</Typography>
                                 </MenuItem>
                                 <MenuItem key={6} onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">Dashboard</Typography>

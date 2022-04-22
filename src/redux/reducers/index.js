@@ -1,9 +1,10 @@
-import counterReducer from './counter'
 import loggedReducer from './isLogged'
+import userReducer from './user'
+import myProReducer from './myproduct'
 import { combineReducers } from 'redux'
 
 const allReducers = combineReducers({
-    counter:counterReducer,
+    myPro: myProReducer,
     isLogged:loggedReducer 
 })
 

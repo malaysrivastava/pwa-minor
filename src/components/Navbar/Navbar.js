@@ -1,12 +1,12 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import View from './Navbar-view';
-import { useNavigate} from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({log}) => {
 
-  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  let history = useHistory()
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -14,34 +14,32 @@ const Navbar = () => {
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
+    const logOutUser = ()=>{
+      localStorage.clear()
+      history.push('/login')
+    }
 
     const handleCloseNavMenu = (pageUrl) => {
         setAnchorElNav(null);
         console.log('clicked')
-        console.log(navigate)
-        navigate(pageUrl);
     };
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
 
-  const [show,setShow] = useState(true);
-  var excp = window.location.pathname;
 
-  useEffect(()=>{
-  console.log(excp)
-    if(excp=='/login'){
-      setShow(false);
-    }else{
-      setShow(true);
+    let img;
+
+     
+      if(JSON.parse(localStorage.getItem('User'))){
+        img = JSON.parse(localStorage.getItem('User')).picture
     }
-  },[2])
-  
-if(show){
+    
+
 return( 
       <div>
-      <View {...{handleCloseNavMenu,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser}}/>
+      <View {...{handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser,img}}/>
       <div className="small_Nav" style={{backgroundColor:'whitesmoke' , padding:'5px'}}>
         <div className="inside">
           <div className='cat-1'>
@@ -67,12 +65,7 @@ return(
      
   </div>
   );
-} else {
-  console.log("check")
-  return(
-    <></>
-  )
-}
+  
 }
 
 export default Navbar;

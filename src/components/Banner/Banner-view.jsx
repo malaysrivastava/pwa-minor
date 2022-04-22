@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import {Grid} from '@material-ui/core'
 
 const View = () => {
@@ -10,23 +10,10 @@ const View = () => {
         backgroundColor:''
       }
 
-      const [show,setShow] = useState(true);
-      var excp = window.location.pathname;
-    
-      useEffect(()=>{
-      console.log(excp)
-        if(excp=='/login'){
-          setShow(false);
-        }else{
-          setShow(true);
-        }
-      },[2])
-
-      if(show){
     return (
         <div>
  
- <Grid container>
+     <Grid container>
      <Grid item xs={12} style={gridStyle} >
      {/* <Paper elevation={10} style={paperStyle}> */}
 
@@ -35,16 +22,8 @@ const View = () => {
         {/* </Paper> */}
         </Grid>
      </Grid>
-      
-  
-    
         </div>
-
-        
-       
+   
     )
-} else {
-    return (<></>)
-}
 }
 export default View;

@@ -21,14 +21,7 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
     <Grid>
       <Paper elevation={10} style={paperStyle}>
 
-     <div className='jmg'>
-        <img src="https://www.juit.ac.in/front/images/logo.jpg" alt="" />
-     </div>
-
-      <div className='progress'>
-        <LinearProgress style={{ padding: "4px", borderRadius: "40px" }} />
-      </div>
-      {/* <div className='Gsuit'>
+      <div className='Gsuit'>
         <GoogleLogin
             clientId="233905196668-6010oh4hlatb7bna850l7tu8tc4hj2v4.apps.googleusercontent.com"
             buttonText="Login with GSUITE"
@@ -36,7 +29,7 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
             onFailure={responseErrorGoogle}
             cookiePolicy={'single_host_origin'}
         />
-      </div> */}
+      </div> 
       
       </Paper>
       

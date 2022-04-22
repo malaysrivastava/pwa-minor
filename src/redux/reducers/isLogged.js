@@ -1,10 +1,13 @@
-const loggedReducer = (state=false ,action)=>{
+const loggedReducer = (state=false,action) => {
     switch(action.type){
         case 'SIGN_IN':
-            return !state
+            return (
+                action.payload
+            )
+        case 'SIGN_OUT':
+            return state=false    
         default:
-            return state;    
-
+            return state
     }
 }
 
