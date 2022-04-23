@@ -16,7 +16,8 @@ const ProductSchema = new mongoose.Schema({
         required:true
     },
     categories:{
-        type:Array
+        type:String,
+        required:true
     },
     price:{
         type:Number,
@@ -30,6 +31,10 @@ const ProductSchema = new mongoose.Schema({
         type:String,
         required:true
       },
+    address:{
+        type:String,
+        required:false
+    },  
     userName:{
         type:String,
         required:true

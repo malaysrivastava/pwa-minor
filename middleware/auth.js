@@ -1,4 +1,5 @@
- const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
+
 
  function auth(req,res,next) {
     const token =req.headers[ "x-auth-token" ];
@@ -40,4 +41,6 @@
      
  }
 
- module.exports = authAdmin,auth
+
+
+ module.exports = auth,authAdmin

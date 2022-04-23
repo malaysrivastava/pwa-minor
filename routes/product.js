@@ -4,9 +4,9 @@ const auth = require('../middleware/auth')
 const Product = require("../models/Product")
 
 router.post('/addP',auth, async (req,res)=>{
+    console.log(req.body) 
     const newProduct = new Product(req.body)
-
-    try {
+   try {
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct);
     } catch (err) {
