@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import MyPView from "./mypro-view"
-import { my_product } from "../../redux/actions";
-import { useDispatch } from "react-redux";
+import { product_in } from "../../redux/actions";
+import { useDispatch,useSelector } from "react-redux";
 
 const MyPro=()=>{
 
@@ -20,7 +20,7 @@ const MyPro=()=>{
         }
       })
       .then((res) => {
-        dispatch(my_product(res.data))
+        dispatch(product_in(res.data))
       })
       .catch((error) => {
         console.error(error)
@@ -33,9 +33,17 @@ const MyPro=()=>{
       loadData();
   },[1])
 
+  const check = useSelector(state=>state.myPro)
+  
+  if(check && check.length > 0){
     return(
         <MyPView {...{}}/>
     )
+    } else{
+        return(
+            <>No Products found</>
+        )
+    }
 }
 
 export default MyPro;

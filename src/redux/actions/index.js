@@ -28,9 +28,14 @@ export const logout =()=> {
 }
 
 
-export const my_product = (data)=> {
+export const product_in = (data)=> {
     return{
         type: 'ADD',
         payload: data
+    }
+}
+export const product_out = ()=> {
+    return{
+        type: 'DELETE'
     }
 }

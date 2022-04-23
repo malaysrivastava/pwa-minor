@@ -15,8 +15,7 @@ const MyPView=()=>{
          setShow(true)
      },[])
 
-    if(show){
-        console.log(pro)
+    if(show && pro){
        return (
         <div className="users">
          {pro.map((data,index) => (
@@ -29,7 +28,7 @@ const MyPView=()=>{
       );
 } else{
     return (<>loading....</>);
-}
+} 
 };
 
 export default MyPView;
