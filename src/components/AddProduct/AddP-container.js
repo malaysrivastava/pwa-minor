@@ -1,6 +1,12 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import axios from 'axios'
 import AddPView from "./AddP-view"
+import {storage} from '../firebase'
+import {ref,uploadBytes,getDownloadURL} from 'firebase/storage'
+import {v4} from 'uuid'
+import { useDispatch, useSelector } from "react-redux";
+import { link_in } from "../../redux/actions";
+import wait from 'wait'
 
 const AddP=()=>{
 
@@ -23,26 +29,66 @@ const AddP=()=>{
               const [formdata, setFormData] = useState({
                   title: '',
                   desc: '',
-                  img:'fdfd',
+                  img:'',
                   categories:'',
                   price:0,
-                  address:'H1 R4',
+                  address:'',
                   userID: user_id,
                   userMail:user_email,
                   userName:user_name,
                   text: 'Add'
                 })
+              
+                const [image,setImage] = useState(null)
+
+                const [imagePreview, setImagePreview] = useState("");
       
                 const {title,desc,img,categories,price,address,userID,userMail,userName} = formdata
       
                 const handleChange = name => e =>{
                   setFormData({...formdata,[name]:e.target.value})
                }
-               
-               const handleSubmit = e => {
-                  e.preventDefault()
-                  if (title && desc && price && categories && img) {
-                    setFormData({...formdata, text:'Adding..'})
+
+               //const dispath = useDispatch();
+
+               const setUrl= async(path)=>{
+                const Imageref = ref(storage,path)
+                await getDownloadURL(Imageref).then((x)=>{
+                    //dispath(link_in(x))
+                    setFormData({...formdata,img:x})
+                })
+            }
+
+               const setImageUpload =(e)=>{
+                    const reader = new FileReader();           // babel javascript class
+                    reader.onloadend = () => {
+                    setImagePreview(reader.result);
+                    }
+                    reader.readAsDataURL(e.target.files[0]);
+                    setImage(e.target.files[0])
+               }
+             
+              const uploadImage = (e)=>{
+                  e.preventDefault();
+                  if(image == null && !title && !desc && !price && !categories && !image && image.length<=0) {
+                    alert('Add all fields')  
+                    return;
+                  }
+                  setFormData({...formdata, text:'Adding..'})
+                  const imageRef = ref(storage, `image/${image.name + v4()}`)
+                  uploadBytes(imageRef,image).then(async (res)=>{
+                     setUrl(res.ref._location.path)
+                     await wait(2000)
+                     handleSubmit()
+                  })
+            }
+              
+              //const pro = useSelector(state => state.myLink); 
+
+               const handleSubmit = () => {
+                  //e.preventDefault()
+                  if (title && desc && price && categories && img.length > 0 && img) {
+                  
                     axios({
                         method:"POST",
                         url:"http://localhost:8000/api/product/addP",
@@ -73,6 +119,7 @@ const AddP=()=>{
                             text:'Added'
                           
                         })
+                        setImagePreview("")
                         console.log(res)
                     })
                     .catch((error) => {
@@ -80,17 +127,18 @@ const AddP=()=>{
                             ...formdata,
                             text: 'Add'
                           });
+                          alert("Error in uploding image, try again")
                           console.log(error);
     
                     })
                   } else {
-                      console.log('Nhi ho pa raha',title,desc,price,img,categories)
+                      alert('Add again')
                   }
                 }
       
-
+                
     return(
-        <AddPView {...{Category,handleChange,handleSubmit,formdata}}/>
+        <AddPView {...{Category,handleChange,setImageUpload,imagePreview,handleSubmit,uploadImage,formdata}}/>
     )
 }
 

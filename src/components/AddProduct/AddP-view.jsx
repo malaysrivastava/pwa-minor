@@ -8,8 +8,7 @@ import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core"
 import {makeStyles} from "@material-ui/core"
 
-
-const AddPView = ({Category,handleSubmit,handleChange,formdata}) => {
+const AddPView = ({Category,handleSubmit,handleChange,setImageUpload,formdata,imagePreview,uploadImage}) => {
  
 
 const useStyles = makeStyles((theme) =>({
@@ -34,7 +33,6 @@ const MenuProps = {
 
 
 const classes=useStyles();
-const [imagePreview, setImagePreview] = useState("");
 const paperStyle = {
   padding: 5,
   height: '85vh',
@@ -53,17 +51,8 @@ function getStyles(name, personName, theme) {
 }
 
 const theme = useTheme();
-
-
-  const fileHandle = e => {
-    const reader = new FileReader();           // babel javascript class
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    }
-    reader.readAsDataURL(e.target.files[0]);
-  }
   
-  const {title,desc,price,categories,address} = formdata;
+  const {title,desc,price,img,categories,address} = formdata;
 
   return (
     <Grid  >
@@ -145,7 +134,7 @@ const theme = useTheme();
         type="file"
         accept="image/*"
         style={{ display: 'none' }}
-        onChange={fileHandle}
+        onChange={setImageUpload}
         id="contained-button-file"
       />
       <label htmlFor="contained-button-file">
@@ -164,7 +153,8 @@ const theme = useTheme();
     }}
     variant="contained"
     type="submit"
-    onClick={handleSubmit}
+    //onClick={handleSubmit}
+    onClick={uploadImage}
     >{formdata.text}
 </Button>
         </FormGroup>
