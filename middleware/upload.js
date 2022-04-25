@@ -20,7 +20,7 @@ const oauth2Client = new google.auth.OAuth2(
 async function uploadFile(product){
     
     const filePath = path.join(__dirname,'IMG_3938.jpg')
-
+         
         try {
             const response = await drive.files.create({
                 requestBody:{
@@ -32,6 +32,7 @@ async function uploadFile(product){
                 }
             })
             
+            console.log(fs.createReadStream(filePath))
             //generatePublicUrl(response.data.id)
             return generatePublicUrl(response.data.id)
         } catch (error) {
