@@ -11,14 +11,6 @@ import {makeStyles} from "@material-ui/core"
 const AddPView = ({Category,handleSubmit,handleChange,setImageUpload,formdata,imagePreview,uploadImage}) => {
  
 
-const useStyles = makeStyles((theme) =>({
-paperStyle:{
-  [theme.breakpoints.up("sm")]:{
-    width:'1300',
-    backgroundColor:'black'
-  }
-}
-}));
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -32,7 +24,6 @@ const MenuProps = {
 };
 
 
-const classes=useStyles();
 const paperStyle = {
   padding: 5,
   height: '85vh',
@@ -55,9 +46,17 @@ const theme = useTheme();
   const {title,desc,price,img,categories,address} = formdata;
 
   return (
-    <Grid  >
-    {/* <Grid item xs={12} md={6} style={{backgroundColor:'black'}}> */}
-      <Paper elevation={10}  style={paperStyle}>
+   
+    <Grid  container spacing={2}  >
+        <Grid item  md={2}>
+
+        </Grid>
+
+        <Grid  className="style_grid"item  md={5}>
+          <img className="grid_img" src="../Add Product.webp"/>
+      </Grid>
+    <Grid item xs={12} md={3}>
+      <Paper elevation={8}  style={paperStyle}>
         <Grid align="center">
           <div className="text">
             <p>Add Product</p>
@@ -138,7 +137,9 @@ const theme = useTheme();
         id="contained-button-file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
+        <Button variant="contained" color="primary" component="span" style={{
+          marginTop:'1rem'
+        }}>
           Upload Product Image
         </Button>
       </label>
@@ -148,7 +149,7 @@ const theme = useTheme();
         borderRadius: 35,
         backgroundColor: "tomato",
         padding: "17px 36px",
-        marginTop:'15px',
+        marginTop:'6rem',
         fontSize: "15px"
     }}
     variant="contained"
@@ -161,6 +162,10 @@ const theme = useTheme();
       </Paper>
 
     </Grid> 
+    <Grid item md={2}>
+      </Grid>
+  
+    </Grid>
 
 
   );
