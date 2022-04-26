@@ -1,12 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import View from './Navbar-view';
+import { product_out } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
 
 const Navbar = () => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   let history = useHistory()
+  const dispath = useDispatch();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -16,7 +19,8 @@ const Navbar = () => {
     };
     const logOutUser = ()=>{
       localStorage.clear()
-      history.go('/login')
+      dispath(product_out())
+      history.push('/login')
     }
 
     const handleCloseNavMenu = (pageUrl) => {

@@ -48,3 +48,7 @@
         display: none;
     }
   }
+  .cat-drop{
+    width: 250px;
+    color: black;
+}

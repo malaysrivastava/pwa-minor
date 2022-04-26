@@ -27,10 +27,29 @@ export const logout =()=> {
     }
 }
 
+export const link_in = (data)=>{
+    return{
+        type:'ADD_LINK',
+        payload:data
+    } 
+}
 
-export const my_product = (data)=> {
+
+export const link_out = (data)=>{
+    return{
+        type:'DELETE_LINK',
+        payload:data
+    } 
+}
+
+export const product_in = (data)=> {
     return{
         type: 'ADD',
         payload: data
+    }
+}
+export const product_out = ()=> {
+    return{
+        type: 'DELETE'
     }
 }
