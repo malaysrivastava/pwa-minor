@@ -10,6 +10,7 @@ import { MyPro } from "../MyProduct";
 import PrivateRoute from "../PrivateRoute";
 import {AddProduct} from '../AddProduct'
 import { ViewImage } from "../ViewImage";
+import { EditP } from "../EditProduct";
 
 
 const App = () => {
@@ -38,6 +39,9 @@ const App = () => {
       </PrivateRoute>
         <PrivateRoute exact path="/addproduct">
           <AddProduct/>
+        </PrivateRoute>
+        <PrivateRoute exact path="/editproduct/:id">
+          <EditP/>
         </PrivateRoute>
       </Switch>
       <Footer/>

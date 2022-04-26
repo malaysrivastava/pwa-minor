@@ -68,6 +68,22 @@ const MyPro=()=>{
     });
   };
 
+  const goToEdit=(id)=>{
+       
+      axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
+        headers: {
+          'x-auth-token': token
+        }
+      })
+      .then((res) => {
+        dispatch(product_in(res.data))
+        history.push(`./editproduct/id=${id}`)
+      })
+      .catch((error) => {
+        console.error(error)
+      })  
+  }
+
   useEffect(()=>{
       loadData();
   },[1])
@@ -76,7 +92,7 @@ const MyPro=()=>{
   
   if(check && check.length > 0){
     return(
-        <MyPView {...{submit}}/>
+        <MyPView {...{submit,goToEdit}}/>
     )
     } else{
         return(

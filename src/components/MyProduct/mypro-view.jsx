@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Button from '@mui/material/Button';
 import wait from 'wait';
  
-const MyPView=({submit})=>{
+const MyPView=({submit,goToEdit})=>{
 
     const pro = useSelector(state => state.myPro); 
     
@@ -36,6 +36,19 @@ const MyPView=({submit})=>{
                 type="submit"
                 onClick={()=>submit(data._id)}
                 >Delete Product
+            </Button>
+              <Button
+                style={{
+                    borderRadius: 35,
+                    backgroundColor: "tomato",
+                    padding: "17px 36px",
+                    marginTop:'15px',
+                    fontSize: "15px"
+                }}
+                variant="contained"
+                type="submit"
+                onClick={()=>goToEdit(data._id)}
+                >Edit Product
             </Button>
           </div>
           ))}
