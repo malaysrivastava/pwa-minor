@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core"
 import Autocomplete from '@mui/material/Autocomplete';
-import {makeStyles} from "@material-ui/core"
+
 
 const top100Films = [
   { label: 'The Shawshank Redemption', year: 1994 },
@@ -17,23 +17,15 @@ const top100Films = [
   { label: 'Pulp Fiction', year: 1994 },
 ]
 
-const useStyles = makeStyles((theme) =>({
-paperStyle:{
-  [theme.breakpoints.up("sm")]:{
-    width:'1300',
-    backgroundColor:'black'
-  }
-}
-}));
 
 const AddPView = () => {
-  const classes=useStyles();
+
   const [imagePreview, setImagePreview] = useState("");
   const paperStyle = {
-    padding: 5,
-    height: '85vh',
+    padding: 2,
+    height: '88vh',
     width: 370,
-    margin: '5px auto',
+    margin: '2px auto',
    
   }
   const fileHandle = e => {
@@ -45,9 +37,17 @@ const AddPView = () => {
   }
 
   return (
-    <Grid  >
-    {/* <Grid item xs={12} md={6} style={{backgroundColor:'black'}}> */}
-      <Paper elevation={10}  style={paperStyle}>
+   
+    <Grid  container spacing={2}  >
+        <Grid item  md={2}>
+
+        </Grid>
+
+        <Grid  className="style_grid"item  md={5}>
+          <img className="grid_img" src="../Add Product.webp"/>
+      </Grid>
+    <Grid item xs={12} md={3}>
+      <Paper elevation={8}  style={paperStyle}>
         <Grid align="center">
           <div className="text">
             <p>Add Product</p>
@@ -110,7 +110,9 @@ const AddPView = () => {
         id="contained-button-file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
+        <Button variant="contained" color="primary" component="span" style={{
+          marginTop:'1rem'
+        }}>
           Upload Product Image
         </Button>
       </label>
@@ -120,7 +122,7 @@ const AddPView = () => {
         borderRadius: 35,
         backgroundColor: "tomato",
         padding: "17px 36px",
-        marginTop:'15px',
+        marginTop:'6rem',
         fontSize: "15px"
     }}
     variant="contained"
@@ -130,6 +132,10 @@ const AddPView = () => {
       </Paper>
 
     </Grid> 
+    <Grid item md={2}>
+      </Grid>
+  
+    </Grid>
 
 
   );

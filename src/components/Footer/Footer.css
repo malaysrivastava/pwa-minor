@@ -1,11 +1,12 @@
 .footer{
     /* display:'flex';
     align-items: flex-end; */
-    top: 190%;
+    top: 180%;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    
 }
 
 

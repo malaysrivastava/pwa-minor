@@ -16,7 +16,7 @@ const Navbar = () => {
     };
     const logOutUser = ()=>{
       localStorage.clear()
-      history.push('/login')
+      history.go('/login')
     }
 
     const handleCloseNavMenu = (pageUrl) => {
