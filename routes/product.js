@@ -24,10 +24,11 @@ router.delete('/delP/',auth,async (req,res)=>{
     }
 })
 
-router.put('/editP/:id',auth,async (req,res)=>{
+router.put('/editP/',auth,async (req,res)=>{
     try {
+        const id = req.query.id;
         const updatedProduct = await Product.findByIdAndUpdate(
-            req.params.id,
+            id,
             {
                 $set : req.body,
             },
@@ -67,11 +68,11 @@ router.get('/',auth,async (req,res)=>{
     }
 })
 
-router.get('/:id',auth,async (req,res)=>{
+router.get('/idby',auth,async (req,res)=>{
     try {
         let product;
         product = await Product.find({
-            _id:req.params.id,
+            _id:req.query.id,
        });
        return res.status(200).json(product);
     } catch (error) {
