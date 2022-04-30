@@ -20,7 +20,7 @@ const Navbar = () => {
     const logOutUser = ()=>{
       localStorage.clear()
       dispath(product_out())
-      history.push('/login')
+      history.go('/login')
     }
 
     const handleCloseNavMenu = (pageUrl) => {

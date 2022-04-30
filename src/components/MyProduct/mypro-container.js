@@ -77,7 +77,7 @@ const MyPro=()=>{
       })
       .then((res) => {
         dispatch(product_in(res.data))
-        history.push(`./editproduct/id=${id}`)
+        history.push(`./editproduct/${id}`)
       })
       .catch((error) => {
         console.error(error)

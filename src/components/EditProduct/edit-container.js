@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import EditView from './edit-view'
-import { useHistory,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector} from "react-redux";
 import { product_in } from "../../redux/actions";
+import wait from 'wait'
 
 const EditP=()=>{
 
     const token = localStorage.getItem("Token")
     const dispatch = useDispatch();
 
-    let history = useHistory()
     
-    const id = "62678bb78e082bbaba36f692"
+    const {id} = useParams()
 
     const loadData=(id)=>{
         axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
@@ -28,15 +28,39 @@ const EditP=()=>{
           })  
     }
 
-    useEffect(()=>{
-      loadData(id)
-    },[id])
+    const pro = useSelector(state => state.myPro); 
+    
+    const [show,setShow] = useState(false);
 
+    const Category = [
+        'Stationary',
+        'Clothing',
+        'General needs',
+        'Beverages',
+        'Food',
+        'Gadgets',
+        'Books',
+        'Others'
+    ]
+ 
+    useEffect(async()=>{
+        loadData(id)
+        setShow(false)
+        await wait(1000)
+        setShow(true)
+    },[])
+
+    if(show && pro){
     return(
         <>
-            <EditView {...{}}/>
+            <EditView {...{Category,pro}}/>
         </>
     )
+    } else {
+        return(
+            <>Loading....</>
+        )
+    }
 }
 
 export default EditP;
