@@ -1,6 +1,7 @@
 
 .form{
     align-items: center;
+  ;
 }
 .text{
     background-color: tomato;
@@ -13,7 +14,7 @@
 }
 .imagePreview{
     justify-content: space-between;
-    width: 50%;
+    width: 70%;
     height: auto;
    padding:30px;
     
@@ -22,8 +23,8 @@
   .imagePreview img{
     object-fit: fill;
     align-content: center;
-    width: 70%;
-    height: 60%;
+    width: 100%;
+    height: 70%;
   
   }
   
@@ -33,7 +34,7 @@
   }
   .grid_img{
       width: 100%;
-      height:88vh;
+      height:90vh;
       padding-top: 2px;
   }
 .image_input{
@@ -43,7 +44,7 @@
 }
 
 
-@media(max-width: 868px){
+@media(max-width: 1068px){
     .style_grid{
         display: none;
     }

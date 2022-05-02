@@ -6,7 +6,6 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Button from '@mui/material/Button';
 import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core"
-import {makeStyles} from "@material-ui/core"
 
 const AddPView = ({Category,handleSubmit,handleChange,setImageUpload,formdata,imagePreview,uploadImage}) => {
  
@@ -26,7 +25,7 @@ const MenuProps = {
 
 const paperStyle = {
   padding: 5,
-  height: '85vh',
+  height: '44.5rem',
   width: 370,
   margin: '5px auto',
  
@@ -53,7 +52,8 @@ const theme = useTheme();
         </Grid>
 
         <Grid  className="style_grid"item  md={5}>
-          <img className="grid_img" src="../Add Product.webp"/>
+      <img className="grid_img" src="../Add Product.webp"/>
+     
       </Grid>
     <Grid item xs={12} md={3}>
       <Paper elevation={8}  style={paperStyle}>
@@ -62,7 +62,7 @@ const theme = useTheme();
             <p>Add Product</p>
           </div>
         </Grid>
-        <FormGroup className="form" onSubmit={handleSubmit} noValidate autoComplete="off">
+        <FormGroup  className="form" onSubmit={handleSubmit} noValidate autoComplete="off">
 
           <Select
           labelId="demo-multiple-name-label"
@@ -72,6 +72,7 @@ const theme = useTheme();
           onChange={handleChange('categories')}
           input={<OutlinedInput label="Name" />}
           MenuProps={MenuProps}
+          style={{padding:'10px'}}
         >
           {Category.map((cat) => (
             <MenuItem
@@ -109,10 +110,10 @@ const theme = useTheme();
             multiline
             rows={3}
             variant="filled"
-            name='desc'
+            name='Desc'
             value={desc}
             onChange={handleChange('desc')}
-            style={{ width: 250 }}
+            style={{ width: 250  }}
           />
           <TextField
             label="Hostel Address"
@@ -120,7 +121,7 @@ const theme = useTheme();
             onChange={handleChange('address')}
             // className={classes.textField}
             name='add'
-            style={{ width: 250 }}
+            style={{ width: 250  }}
           />
        
            
@@ -138,7 +139,7 @@ const theme = useTheme();
       />
       <label htmlFor="contained-button-file">
         <Button variant="contained" color="primary" component="span" style={{
-          marginTop:'1rem'
+          marginTop:'2rem'
         }}>
           Upload Product Image
         </Button>
@@ -149,7 +150,7 @@ const theme = useTheme();
         borderRadius: 35,
         backgroundColor: "tomato",
         padding: "17px 36px",
-        marginTop:'6rem',
+        marginTop:'3rem',
         fontSize: "15px"
     }}
     variant="contained"

@@ -9,6 +9,8 @@ import Button from '@mui/material/Button';
 import Slider from "react-slick";
 
 
+
+
 const View = () => {
     const gridStyle = {
         padding: 12,
@@ -60,6 +62,7 @@ const View = () => {
         <h2 className="trending_text"> Top 20 trending items..</h2>
         <Slider className="slider" {...settings}>
           <div>
+         
             <img className="image" src='https://miro.medium.com/max/640/0*wJ1H_ArMVuZR-wwm.png'/>
             <p>
               <b>Rs 500</b>
@@ -68,6 +71,7 @@ const View = () => {
           </div>
           <div>
           <img className="image" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kwjbXUhtAJljpntW9136Kb53aULjExh40w&usqp=CAU'/>
+        
           <p>
               <b>Rs 150</b>
               <b>H15-10</b>

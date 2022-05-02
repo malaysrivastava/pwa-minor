@@ -22,25 +22,23 @@ const App = () => {
 useEffect(()=>{
   const currentUrl = window.location.href;
   setUrl(currentUrl);
-  console.log(url)
-  console.log(currentUrl)
   if(currentUrl == `http://localhost:3000/login`){
     setIsloginpage(true);
     console.log(Isloginpage)
   }
   else{
     setIsloginpage(false);
-    console.log("not current")
+
     
   }
 
-  console.log("reached")
+  
 },[url])
 
   return (
       <Router>
-     {Isloginpage? NaN:<Navbar/>} 
-     {Isloginpage? NaN:<Banner/>} 
+     {Isloginpage? null:<Navbar/>} 
+     {Isloginpage? null:<Banner/>} 
       
        <Switch>
       <Route exact path="/login">
@@ -62,7 +60,7 @@ useEffect(()=>{
           <AddProduct/>
         </PrivateRoute>
       </Switch>
-      {Isloginpage? NaN:<Footer/>} 
+      {Isloginpage? null:<Footer/>} 
       </Router>
 
   );
