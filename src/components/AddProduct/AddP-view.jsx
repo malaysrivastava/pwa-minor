@@ -43,7 +43,7 @@ function getStyles(name, personName, theme) {
 
 const theme = useTheme();
   
-  const {title,desc,price,img,categories,address} = formdata;
+  const {title,desc,price,img,phone,categories,address} = formdata;
 
   return (
    
@@ -122,7 +122,14 @@ const theme = useTheme();
             name='add'
             style={{ width: 250 }}
           />
-       
+         
+         <TextField
+            label="Phone number (optional)"
+            value={phone}
+            onChange={handleChange('phone')}
+            name='add'
+            style={{ width: 250 }}
+          />
            
           
           <div className="imagePreview">

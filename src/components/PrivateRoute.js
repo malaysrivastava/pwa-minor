@@ -14,6 +14,7 @@ export default function PrivateRoute({ children, ...rest }) {
   
   useEffect(()=>{
       jwt.verify(token,'my-32-character-ultra-secure-and-ultra-long-secret',function(err,decode){
+        console.log('hello')
         if(err){
           setLog(false);
         
@@ -32,7 +33,7 @@ export default function PrivateRoute({ children, ...rest }) {
     <Route {...rest}>
       {log ? (
         children
-      ) : history.go('/login')}
+      ) : (<Redirect to={`/login`}/>)}
     </Route>
   );
 }

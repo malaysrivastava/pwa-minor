@@ -7,6 +7,7 @@ import jwt from 'jsonwebtoken'
 const Landing = () => {
 
   let history = useHistory()
+  
 
   const [log,setLog] = useState(false);
   

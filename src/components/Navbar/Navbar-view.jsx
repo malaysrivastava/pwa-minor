@@ -67,8 +67,8 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                                 <MenuItem key={2} onClick={()=>handleCloseNavMenu('/addproduct')}>
                                     <Typography textAlign="center">Add Products</Typography>
                                 </MenuItem>
-                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/')}>
-                                    <Typography textAlign="center">Favorites</Typography>
+                                <MenuItem key={3} onClick={()=>handleCloseNavMenu('/wish')}>
+                                    <Typography textAlign="center">Wishlist</Typography>
                                 </MenuItem>
                         </Menu>
                     </Box>
@@ -87,8 +87,8 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                             sx={{ my: 2, color: 'white', display: 'block' }}>Products</Button>
                         <Button onClick={()=>handleCloseNavMenu('/addproduct')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Add Products</Button>
-                        <Button onClick={()=>handleCloseNavMenu('/product')}
-                            sx={{ my: 2, color: 'white', display: 'block' }}>Favorites</Button>
+                        <Button onClick={()=>handleCloseNavMenu('/wish')}
+                            sx={{ my: 2, color: 'white', display: 'block' }}>Wishlist</Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

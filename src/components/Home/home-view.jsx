@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Grid } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -7,9 +8,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Slider from "react-slick";
+import { makeStyles } from '@material-ui/core/styles';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
 
 
-const View = () => {
+const View = ({pro}) => {
     const gridStyle = {
         padding: 12,
         height: '20vh',
@@ -51,98 +55,59 @@ const View = () => {
           }
         ]
       };
-              
 
+
+      const useStyles = makeStyles({
+        root: {
+          maxWidth: 285,
+          margin: 5
+        },
+        media: {
+          height: 200,
+        },
+        content:{
+          height:40,
+          textAlign:'left',
+          color:'grey'
+        }
+      });
+
+      const classes = useStyles();
     return (
         <div className="home">
            
             <div className="items">
         <h2 className="trending_text"> Top 20 trending items..</h2>
         <Slider className="slider" {...settings}>
-          <div>
-            <img className="image" src='https://miro.medium.com/max/640/0*wJ1H_ArMVuZR-wwm.png'/>
-            <p>
-              <b>Rs 500</b>
-              <b>H4-28</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kwjbXUhtAJljpntW9136Kb53aULjExh40w&usqp=CAU'/>
-          <p>
-              <b>Rs 150</b>
-              <b>H15-10</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/9cwja3u6m6ai3-IN/image;s=780x0;q=60'/>
-          <p>
-              <b>Rs 25000</b>
-              <b>H11-42A</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/jssg3r1xsiph2-IN/image;s=780x0;q=60'/>
-          <p>
-              <b>Rs 1500</b>
-              <b>H1-8</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='https://apollo-singapore.akamaized.net/v1/files/y0gn9flb856t2-IN/image;s=780x0;q=60'/>
-          <p>
-              <b>Rs 500</b>
-              <b>H4-28</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          <p>
-              <b>Rs 500</b>
-              <b>H4-28</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          <p>
-              <b>Rs 500</b>
-              <b>H4-28</b>
-            </p>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          <p>
-              <b>Rs 500</b>
-              <b>H4-28</b>
-            </p>
-          </div>
-        </Slider>
-            </div>
-        <div className="items">
-        <Slider {...settings}>
-          <div>
-            <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
-          <div>
-          <img className="image" src='../Amazone.jpg'/>
-          </div>
+        {
+          pro && pro.map((data,key)=>
+
+          <Link to={`/viewImage/${data._id}`}>
+            <Card key={key} className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image={data.img}
+          title="Contemplative Reptile"
+        />
+        <CardContent className={classes.content}>
+          <Typography gutterBottom variant="h5" component="h2">
+            {data.title}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions className="cardaction">
+        <h4>₹{data.price}</h4>
+        {data.address &&
+          <h5>Address:{data.address}</h5>
+        }
+        
+      </CardActions>
+    </Card>
+    </Link>
+          )
+        }
+        
         </Slider>
       </div>
      
@@ -152,7 +117,7 @@ const View = () => {
 
 
             <div className="dev_box">
-                <div className="dev_name">Developer</div>
+                <div className="dev_name">Developers</div>
 
 
                 <Grid container spacing={1}  >
@@ -164,12 +129,12 @@ const View = () => {
                             <CardMedia
                                 component="img"
                                 sx={{ width: 151, height: 155 }}
-                                image="../Amazone.jpg"
+                                image="https://media-exp1.licdn.com/dms/image/C5103AQE4EPamrmQn3g/profile-displayphoto-shrink_400_400/0/1585572598051?e=1656547200&v=beta&t=fFi2-cJmUXdd50ar-G21ZkZzFjM863t4S2pFXq0Owco"
                                 alt="Live from space album cover"
                             />
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h6">
+                                    <Typography component="div" variant="h7">
                                         Malay Srivastava
                                     </Typography>
                                     <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -194,12 +159,12 @@ const View = () => {
                             <CardMedia
                                 component="img"
                                 sx={{ width: 151, height: 155 }}
-                                image="../Amazone.jpg"
+                                image="https://media-exp1.licdn.com/dms/image/D5635AQGqo9yiF6dbOA/profile-framedphoto-shrink_400_400/0/1632499680676?e=2147483647&v=beta&t=DAyp3rtxozCiV5IYrC53Olsoqwls7q4FvfTFPK5SQ4U"
                                 alt="Live from space album cover"
                             />
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h6" >
+                                    <Typography component="div" variant="h7" >
                                         Mohit Mayank
                                     </Typography>
                                     <Typography variant="subtitle1"

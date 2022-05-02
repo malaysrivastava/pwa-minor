@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import View from './Navbar-view';
 import { product_out } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
+import wait from 'wait';
 
 const Navbar = () => {
 
@@ -17,17 +18,15 @@ const Navbar = () => {
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
-    const logOutUser = ()=>{
-      localStorage.clear()
-      dispath(product_out())
-      history.go('/login')
-    }
 
     const handleCloseNavMenu = (pageUrl) => {
         setAnchorElNav(null);
-        console.log('clicked')
         history.push(pageUrl)
     };
+    const logOutUser = ()=>{
+      localStorage.setItem("Token","dfdxfdf");
+      history.go('/login')
+    }
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);

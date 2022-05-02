@@ -34,14 +34,14 @@ const paperStyle = {
  
 }
 
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+// function getStyles(name, personName, theme) {
+//   return {
+//     fontWeight:
+//       personName.indexOf(name) === -1
+//         ? theme.typography.fontWeightRegular
+//         : theme.typography.fontWeightMedium,
+//   };
+// }
 
 const theme = useTheme();
   
@@ -58,6 +58,7 @@ const theme = useTheme();
         categories:'',
         price:0,
         address:'',
+        phone:'',
         userID:user_id,
         userMail:user_email,
         userName:user_name,
@@ -67,7 +68,7 @@ const theme = useTheme();
     const [id,setID] = useState('');
 
   
-    const {title,desc,img,categories,price,address,userID,userMail,userName,text} = prod;
+    const {title,desc,img,categories,price,address,phone,userID,userMail,userName,text} = prod;
 
     const [imagePreview, setImagePreview] = useState(pro[0].img);
 
@@ -89,6 +90,7 @@ const theme = useTheme();
 }
 
    const setImageUpload =(e)=>{
+        setProd({...prod,img:''});
         const reader = new FileReader();           // babel javascript class
         reader.onloadend = () => {
         setImagePreview(reader.result);
@@ -131,6 +133,7 @@ const theme = useTheme();
                 img:img,
                 categories:categories,
                 address:address,
+                phone:phone,
                 userID:userID,
                 userMail:userMail,
                 userName:userName
@@ -144,6 +147,7 @@ const theme = useTheme();
                 img:'',
                 cateories:'',
                 price:0,
+                phone:'',
                 address:'',
                 text:'Edited'
               
@@ -173,8 +177,10 @@ const theme = useTheme();
            title:pro[0].title,
            desc:pro[0].desc,
            categories:pro[0].categories,
+           img:pro[0].img,
            price:pro[0].price,
-           address:pro[0].address
+           address:pro[0].address,
+           phone:pro[0].phone
        })
        setID(pro[0]._id)
     },[pro])
@@ -211,7 +217,6 @@ const theme = useTheme();
             <MenuItem
               key={cat}
               value={cat}
-              style={getStyles(cat, categories, theme)}
             >
               {cat}
             </MenuItem>
@@ -257,7 +262,13 @@ const theme = useTheme();
             onChange={handleChange('address')}
           />
        
-           
+       <TextField
+            label="Phone number (optional)"
+            value={phone}
+            onChange={handleChange('phone')}
+            name='add'
+            style={{ width: 250 }}
+          />
           
           <div className="imagePreview">
             
