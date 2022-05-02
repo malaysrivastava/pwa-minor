@@ -1,7 +1,10 @@
-const express = require('express')
+const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 const router = express.Router();
 const auth = require('../middleware/auth')
 const Product = require("../models/Product")
+const Wishlist = require("../models/Wishlist")
 
 router.post('/addP',auth, async (req,res)=>{
     console.log(req.body) 
@@ -80,4 +83,63 @@ router.get('/idby',auth,async (req,res)=>{
     }
 })
 
+//Wishlist-part
+       
+                
+
+router.post('/addW',auth, async (req,res)=>{
+
+    const userID = req.body.userID;
+ 
+     Wishlist.findOne({userID:userID}).exec((err,user)=>{
+         if(err){
+             return res.status(400).json({
+                 error:"Something went wrong..."
+             })
+         } else{
+             if(user){
+                 return res.json({
+                     success: false,
+                     message: "Item already in Wishlist",
+                 });
+             } else{
+                 const newWish = new Wishlist(req.body)
+                 try {
+                      const savedWish = newWish.save();
+                      res.status(200).json({
+                        success: true,
+                        message: "Added to Wishlist",
+                    });
+                  } catch (err) {
+                      res.status(500).json(err);
+                  }
+
+                     }
+                } 
+            });
+    
+});
+
+router.delete('/delW',auth,async (req,res)=>{
+    console.log(req.query.id)
+    try {
+        const id = req.query.id;
+        await Wishlist.findByIdAndDelete(id);
+        return res.status(200).json("Product has been deleted")
+    } catch (error) {
+        return res.status(500).json(err)
+    }
+})
+
+router.get('/Widby',auth,async (req,res)=>{
+    try {
+        let product;
+        product = await Wishlist.find({
+            userMail:req.query.userMail,
+       });
+       return res.status(200).json(product);
+    } catch (error) {
+        return res.status(500).json(err);
+    }
+})
 module.exports = router;
