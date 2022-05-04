@@ -30,8 +30,11 @@ useEffect(()=>{
   }
   else{
     setIsloginpage(false);
+
     
   }
+
+  
 },[url])
 
   return (
@@ -65,7 +68,7 @@ useEffect(()=>{
         <Wishlist/>
       </PrivateRoute>
       </Switch>
-      {Isloginpage? NaN:<Footer/>} 
+      {Isloginpage? null:<Footer/>} 
       </Router>
 
   );

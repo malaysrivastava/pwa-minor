@@ -18,6 +18,11 @@ const Navbar = () => {
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
+    // const logOutUser = ()=>{
+    //   localStorage.clear()
+    //   dispath(product_out())
+    //   history.go('/login')
+    // }
 
     const handleCloseNavMenu = (pageUrl) => {
         setAnchorElNav(null);

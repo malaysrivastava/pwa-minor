@@ -111,12 +111,7 @@ const View = ({pro}) => {
         </Slider>
       </div>
      
-     
-      
-             
-
-
-            <div className="dev_box">
+         <div className="dev_box">
                 <div className="dev_name">Developers</div>
 
 

@@ -69,7 +69,7 @@ const MyPro=()=>{
   };
 
   const goToEdit=(id)=>{
-       
+       console.log("hhh")
       axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
         headers: {
           'x-auth-token': token

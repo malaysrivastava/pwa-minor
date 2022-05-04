@@ -283,7 +283,7 @@ const theme = useTheme();
       />
       <label htmlFor="contained-button-file">
         <Button variant="contained" color="primary" component="span" style={{
-          marginTop:'1rem'
+          
         }}>
           Upload Product Image
         </Button>
@@ -291,7 +291,7 @@ const theme = useTheme();
 
           <Button
     style={{
-        borderRadius: 35,
+        borderRadius: 7,
         backgroundColor: "tomato",
         padding: "17px 17px",
         marginTop:'2em',

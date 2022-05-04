@@ -43,6 +43,7 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                             <MenuIcon />
                         </IconButton>
                         <Menu
+                        
                             id="menu-appbar"
                             anchorEl={anchorElNav}
                             anchorOrigin={{
@@ -61,14 +62,14 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                             }}
                         >
                            
-                             <MenuItem key={1} onClick={()=>handleCloseNavMenu('/product')}>
-                                    <Typography textAlign="center">Products</Typography>
+                             <MenuItem key={1}  onClick={()=>handleCloseNavMenu('/product')}>
+                                    <Typography textAlign="center"   >Products</Typography>
                                 </MenuItem>
                                 <MenuItem key={2} onClick={()=>handleCloseNavMenu('/addproduct')}>
-                                    <Typography textAlign="center">Add Products</Typography>
+                                    <Typography textAlign="center" >Add Products</Typography>
                                 </MenuItem>
                                 <MenuItem key={3} onClick={()=>handleCloseNavMenu('/wish')}>
-                                    <Typography textAlign="center">Wishlist</Typography>
+                                    <Typography textAlign="center" >Wishlist</Typography>
                                 </MenuItem>
                         </Menu>
                     </Box>
