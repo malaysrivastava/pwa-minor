@@ -20,9 +20,9 @@ A group of JUIT students initiate to create a platform for exchanging goods for 
                           </div>
                           <div class="footer-social-icon">
                               <span>Follow us</span>
-                              <a href="#"><i class="fab fa-brands fa-github github-bg bg-secondary"></i></a>
-                              <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                              <a href="#"><i class="fab fa-linkedin bg-primary linkedin-bg"></i></a>
+                              <a href="https://github.com/malaysrivastava"><i class="fab fa-brands fa-github github-bg bg-secondary"></i></a>
+                              <a href="https://twitter.com/MalayPreet"><i class="fab fa-twitter twitter-bg"></i></a>
+                              <a href="https://www.linkedin.com/in/mohit-mayank-0999591a3/"><i class="fab fa-linkedin bg-primary linkedin-bg"></i></a>
                           </div>
                       </div>
                   </div>
@@ -32,16 +32,16 @@ A group of JUIT students initiate to create a platform for exchanging goods for 
                               <h3>Useful Links</h3>
                           </div>
                           <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">about</a></li>
-                              <li><a href="#">services</a></li>
-                              <li><a href="#">portfolio</a></li>
-                              <li><a href="#">Contact</a></li>
-                              <li><a href="#">About us</a></li>
-                              <li><a href="#">Our Services</a></li>
-                              <li><a href="#">Expert Team</a></li>
-                              <li><a href="#">Contact us</a></li>
-                              <li><a href="#">Latest News</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href=""> mohitmayank26@gmail.com</a></li>
+                              <li><a href="/addproduct">Product</a></li>
+                              <li><a href="">malaypreet2013@gmail.com</a></li>
+                              <li><a href="/addproduct">Add Product</a></li>
+                              <li><a href="https://www.juit.ac.in/">Juit</a></li>
+                              <li><a href="/wish">Wishlist</a></li>
+                              {/* <li><a href="#">Expert Team</a></li>
+                              <li><a href="">Contact us</a></li>
+                              <li><a href="#">Latest News</a></li> */}
                           </ul>
                       </div>
                   </div>
