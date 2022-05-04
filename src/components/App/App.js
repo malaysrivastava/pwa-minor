@@ -10,6 +10,8 @@ import { MyPro } from "../MyProduct";
 import PrivateRoute from "../PrivateRoute";
 import {AddProduct} from '../AddProduct'
 import { ViewImage } from "../ViewImage";
+import {Wishlist} from "../Wishlist";
+import { EditP } from "../EditProduct";
 import {useState,useEffect} from "react";
 
 
@@ -53,12 +55,18 @@ useEffect(()=>{
       <PrivateRoute exact path="/product">
         <Product/>
       </PrivateRoute>
-      <PrivateRoute exact path="/viewImage">
+      <PrivateRoute exact path="/viewImage/:id">
       <ViewImage/>
       </PrivateRoute>
         <PrivateRoute exact path="/addproduct">
           <AddProduct/>
         </PrivateRoute>
+        <PrivateRoute exact path="/editproduct/:id">
+          <EditP/>
+        </PrivateRoute>
+      <PrivateRoute exact path="/wish">
+        <Wishlist/>
+      </PrivateRoute>
       </Switch>
       {Isloginpage? null:<Footer/>} 
       </Router>

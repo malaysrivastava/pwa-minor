@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import wait from 'wait';
  
-const MyPView=({submit,goToEdit})=>{
+const WishView=({submit})=>{
 
     const Img = styled('img')({
         margin: 'auto',
@@ -38,8 +38,7 @@ const MyPView=({submit,goToEdit})=>{
         margin: 'auto',
         maxWidth: 700,
         flexGrow: 1,
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+        backgroundColor: '#93906B'
       }}
     >
       <Grid container spacing={2}>
@@ -71,10 +70,6 @@ const MyPView=({submit,goToEdit})=>{
                 onClick={()=>submit(data._id)}
                 >Remove
             </Button>
-              <Button
-                onClick={()=>goToEdit(data._id)}
-                >Edit
-            </Button> 
               </Typography>
             </Grid>
           </Grid>
@@ -94,4 +89,4 @@ const MyPView=({submit,goToEdit})=>{
 } 
 };
 
-export default MyPView;
+export default WishView;

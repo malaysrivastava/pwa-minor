@@ -33,6 +33,7 @@ const AddP=()=>{
                   categories:'',
                   price:0,
                   address:'',
+                  phone:'',
                   userID: user_id,
                   userMail:user_email,
                   userName:user_name,
@@ -43,7 +44,7 @@ const AddP=()=>{
 
                 const [imagePreview, setImagePreview] = useState("");
       
-                const {title,desc,img,categories,price,address,userID,userMail,userName} = formdata
+                const {title,desc,img,categories,price,address,phone,userID,userMail,userName} = formdata
       
                 const handleChange = name => e =>{
                   setFormData({...formdata,[name]:e.target.value})
@@ -102,6 +103,7 @@ const AddP=()=>{
                             img:img,
                             categories:categories,
                             address:address,
+                            phone:phone,
                             userID:userID,
                             userMail:userMail,
                             userName:userName
@@ -115,6 +117,7 @@ const AddP=()=>{
                             img:'',
                             cateories:'',
                             price:0,
+                            phone:'',
                             address:'',
                             text:'Added'
                           

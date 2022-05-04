@@ -42,7 +42,7 @@ function getStyles(name, personName, theme) {
 
 const theme = useTheme();
   
-  const {title,desc,price,img,categories,address} = formdata;
+  const {title,desc,price,img,phone,categories,address} = formdata;
 
   return (
    
@@ -123,7 +123,14 @@ const theme = useTheme();
             name='add'
             style={{ width: 250  }}
           />
-       
+         
+         <TextField
+            label="Phone number (optional)"
+            value={phone}
+            onChange={handleChange('phone')}
+            name='add'
+            style={{ width: 250 }}
+          />
            
           
           <div className="imagePreview">
@@ -139,7 +146,7 @@ const theme = useTheme();
       />
       <label htmlFor="contained-button-file">
         <Button variant="contained" color="primary" component="span" style={{
-          marginTop:'2rem'
+         
         }}>
           Upload Product Image
         </Button>
@@ -147,10 +154,10 @@ const theme = useTheme();
 
           <Button
     style={{
-        borderRadius: 35,
-        backgroundColor: "tomato",
+        borderRadius: 7,
+        backgroundColor: "grey",
         padding: "17px 36px",
-        marginTop:'3rem',
+        marginTop:'2rem',
         fontSize: "15px"
     }}
     variant="contained"

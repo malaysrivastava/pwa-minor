@@ -7,6 +7,7 @@ import jwt from 'jsonwebtoken'
 const Landing = () => {
 
   let history = useHistory()
+  
 
   const [log,setLog] = useState(false);
   
@@ -33,7 +34,6 @@ const Landing = () => {
   }
 
   const responseSuccessGoogle = async (response) => {
-    
     const setData=(data)=>{
       localStorage.setItem('Token',data.data.token);
       localStorage.setItem('User',JSON.stringify(data.data.user))
@@ -41,7 +41,7 @@ const Landing = () => {
     
     axios({
         method:"POST",
-        url:"http://localhost:8000/api/auth/googlelogin",
+        url:"http://localhost:8000/api/auth/googlelogin/",
         data:{tokenId:response.tokenId}
     })
     .then(response=>{

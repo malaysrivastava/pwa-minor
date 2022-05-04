@@ -1,24 +1,24 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import MyPView from "./mypro-view"
+import WishView from "./wishlist-view";
 import { product_in } from "../../redux/actions";
 import { useDispatch,useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-const MyPro=()=>{
+const Wishlist=()=>{
 
     
   const token = localStorage.getItem('Token');
   
-  let id = JSON.parse(localStorage.getItem("User"))._id
+  let mail = JSON.parse(localStorage.getItem("User")).email
   const dispatch = useDispatch();
 
 
   const loadData = () => {
 
-      axios.get(`http://localhost:8000/api/product/?user_id=${id}`, {
+      axios.get(`http://localhost:8000/api/product//Widby/?userMail=${mail}`, {
         headers: {
           'x-auth-token': token
         }
@@ -36,7 +36,7 @@ const MyPro=()=>{
   let history = useHistory();
 
   const deleteProduct=(id)=>{
-    axios.delete(`http://localhost:8000/api/product/delP/?id=${id}`,{
+    axios.delete(`http://localhost:8000/api/product/delW/?id=${id}`,{
       headers:{
         'x-auth-token':token
       }
@@ -68,31 +68,16 @@ const MyPro=()=>{
     });
   };
 
-  const goToEdit=(id)=>{
-       console.log("hhh")
-      axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
-        headers: {
-          'x-auth-token': token
-        }
-      })
-      .then((res) => {
-        dispatch(product_in(res.data))
-        history.push(`./editproduct/${id}`)
-      })
-      .catch((error) => {
-        console.error(error)
-      })  
-  }
 
   useEffect(()=>{
       loadData();
-  },[1])
+  },[])
 
   const check = useSelector(state=>state.myPro)
   
   if(check && check.length > 0){
     return(
-        <MyPView {...{submit,goToEdit}}/>
+        <WishView {...{submit}}/>
     )
     } else{
         return(
@@ -101,4 +86,4 @@ const MyPro=()=>{
     }
 }
 
-export default MyPro;
+export default Wishlist;
