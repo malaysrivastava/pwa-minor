@@ -36,9 +36,11 @@ const WishView=({submit})=>{
       sx={{
         p: 2,
         margin: 'auto',
+        marginTop:2.5,
+        marginBottom:2.5,
         maxWidth: 700,
         flexGrow: 1,
-        backgroundColor: '#93906B'
+        backgroundColor: '#A4A9AC'
       }}
     >
       <Grid container spacing={2}>

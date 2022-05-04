@@ -12,7 +12,7 @@ const View = () => {
                   <div class="col-xl-6 col-lg-6 mb-50">
                       <div class="footer-widget">
                           <div class="footer-logo">
-                              <a href="index.html"><img src="../logo.png" class="img-fluid" alt="logo"/></a>
+                              <a href="/"><img src="../logo.png" class="img-fluid" alt="logo"/></a>
                           </div>
                           <div class="footer-text">
                               <p>
@@ -33,11 +33,11 @@ A group of JUIT students initiate to create a platform for exchanging goods for 
                           </div>
                           <ul>
                               <li><a href="/">Home</a></li>
-                              <li><a href=""> mohitmayank26@gmail.com</a></li>
-                              <li><a href="/addproduct">Product</a></li>
-                              <li><a href="">malaypreet2013@gmail.com</a></li>
+                              <li><a href="mailto:mohitmayank26@gmail.com"> mohitmayank26@gmail.com</a></li>
+                              <li><a href="/product">Product</a></li>
+                              <li><a href="mailto:malaypreet2013@gmail.com">malaypreet2013@gmail.com</a></li>
                               <li><a href="/addproduct">Add Product</a></li>
-                              <li><a href="https://www.juit.ac.in/">Juit</a></li>
+                              <li><a href="https://www.juit.ac.in/" target="_blank">JUIT</a></li>
                               <li><a href="/wish">Wishlist</a></li>
                               {/* <li><a href="#">Expert Team</a></li>
                               <li><a href="">Contact us</a></li>

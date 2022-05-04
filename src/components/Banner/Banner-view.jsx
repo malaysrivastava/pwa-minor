@@ -13,7 +13,7 @@ const View = () => {
     return (
         <div style={{"margin-bottom":'0'}}>
  
-     <Grid container> <img style={{'opacity':'80%',width:'100%',margin:'0',padding:'0'}} src='../navbar.jpeg' alt=""></img>
+     <Grid container> <img style={{'opacity':'80%',width:'100%',margin:'0',padding:'0'}} src='../navbar 2.jpeg' alt=""></img>
         {/* </Paper> */}
         </Grid>
         </div>

@@ -60,7 +60,7 @@ const View = ({pro}) => {
       const useStyles = makeStyles({
         root: {
           maxWidth: 270,
-          margin: 5
+          margin: 2
         },
         media: {
           height: 170,
@@ -127,7 +127,7 @@ const View = ({pro}) => {
                                 image="https://media-exp1.licdn.com/dms/image/C5103AQE4EPamrmQn3g/profile-displayphoto-shrink_400_400/0/1585572598051?e=1656547200&v=beta&t=fFi2-cJmUXdd50ar-G21ZkZzFjM863t4S2pFXq0Owco"
                                 alt="Live from space album cover"
                             />
-                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'row','justify-content':'center','align-items':'center'  }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
                                     <Typography component="div" variant="h7">
                                         Malay Srivastava
@@ -136,9 +136,6 @@ const View = ({pro}) => {
                                         Mern Stack Developer
                                     </Typography>
 
-                                    <Box style={{ paddingTop: '30' }}>
-                                        <Button variant="contained">Connect</Button>
-                                    </Box>
 
 
                                 </CardContent>
@@ -157,7 +154,7 @@ const View = ({pro}) => {
                                 image="https://media-exp1.licdn.com/dms/image/D5635AQGqo9yiF6dbOA/profile-framedphoto-shrink_400_400/0/1632499680676?e=2147483647&v=beta&t=DAyp3rtxozCiV5IYrC53Olsoqwls7q4FvfTFPK5SQ4U"
                                 alt="Live from space album cover"
                             />
-                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'row','justify-content':'center','align-items':'center' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
                                     <Typography component="div" variant="h7" >
                                         Mohit Mayank
@@ -166,9 +163,6 @@ const View = ({pro}) => {
                                         color="text.secondary" component="div">
                                         Mern Stack Developer
                                     </Typography>
-                                    <Box style={{ paddingTop: '10' }}>
-                                        <Button variant="contained">Connect</Button>
-                                    </Box>
 
 
                                 </CardContent>

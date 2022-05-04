@@ -4,7 +4,8 @@ ul {
 }
 .footer-section {
   background: #424546;
-  position: relative;
+  margin: auto;
+  position: sticky;
 }
 .footer-cta {
   border-bottom: 1px solid #373636;
