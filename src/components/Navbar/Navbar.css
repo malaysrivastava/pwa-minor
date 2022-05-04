@@ -13,3 +13,9 @@ div{
 .logo{
     color: aliceblue!important;
 }
+
+.link{
+    text-decoration: none!important;
+    color: black;
+    cursor: pointer;
+}

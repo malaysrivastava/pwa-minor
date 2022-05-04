@@ -1,9 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 import View from './Navbar-view';
-import { product_out } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
-import wait from 'wait';
 
 const Navbar = () => {
 
@@ -51,24 +49,36 @@ return(
       <View {...{handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMenu,handleOpenUserMenu,anchorElNav,anchorElUser,img}}/>
       <div className="small_Nav" style={{backgroundColor:'whitesmoke' , padding:'5px'}}>
         <div className="inside">
-          <div className='cat-1'>
-            Stationary
-          </div>
-          <div className='cat-2'>
-            Gadgets
+            <div className='cat-1'>
+            <Link className="link" to="/product/?category=Stationary">Stationary</Link>
+            </div>
+            <div className='cat-2'>
+            <Link className="link" to="/product/?category=Clothing">
+             Clothing
+            </Link>
             </div>
             <div className='cat-3'>
-            Miscellaneous
+            <Link className="link" to="/product/?category=General needs">
+             General needs
+            </Link>
             </div>
             <div className='cat-4'>
-            Cosmetics
+            <Link className="link" to="/product/?category=Food">
+              Food
+            </Link>
+            
             </div>
             <div className='cat-5'>
-            Room decor
+            <Link className="link" to="/product/?category=Gadgets">
+              Gadgets
+            </Link>
             </div>
-         
-        
-
+            <div className='cat-6'>
+            <Link className="link" to="/product/?category=Books">
+              Books
+            </Link>
+            </div>
+       
         </div>
       </div>
      

@@ -38,7 +38,7 @@ const WishView=({submit})=>{
         margin: 'auto',
         marginTop:2.5,
         marginBottom:2.5,
-        maxWidth: 700,
+        maxWidth: 1000,
         flexGrow: 1,
         backgroundColor: '#A4A9AC'
       }}

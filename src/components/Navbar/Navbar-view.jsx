@@ -63,7 +63,7 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                         >
                            
                              <MenuItem key={1}  onClick={()=>handleCloseNavMenu('/product')}>
-                                    <Typography textAlign="center"   >Products</Typography>
+                                <Typography textAlign="center">Products</Typography>
                                 </MenuItem>
                                 <MenuItem key={2} onClick={()=>handleCloseNavMenu('/addproduct')}>
                                     <Typography textAlign="center" >Add Products</Typography>
@@ -85,9 +85,9 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                   
                         <Button
                             onClick={()=>handleCloseNavMenu('/product')}
-                            sx={{ my: 2, color: 'white', display: 'block' }}>Products</Button>
+                            sx={{ my: 2, color: 'white', display: 'block','margin-right':'1rem!important' }}>Products</Button>
                         <Button onClick={()=>handleCloseNavMenu('/addproduct')}
-                            sx={{ my: 2, color: 'white', display: 'block' }}>Add Products</Button>
+                            sx={{ my: 2, color: 'white', display: 'block','margin-right':'1rem!important' }}>Add Products</Button>
                         <Button onClick={()=>handleCloseNavMenu('/wish')}
                             sx={{ my: 2, color: 'white', display: 'block' }}>Wishlist</Button>
                     </Box>
@@ -116,13 +116,10 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
                         >
                            
                                 <MenuItem key={4} onClick={logOutUser}>
-                                    <Typography textAlign="center">Logout</Typography>
+                                    <Typography textAlign="center" sx={{margin:'auto 5px'}}>Logout</Typography>
                                 </MenuItem>
                                 <MenuItem key={5} onClick={()=>handleCloseNavMenu('/mypro')}>
-                                    <Typography textAlign="center">My Products</Typography>
-                                </MenuItem>
-                                <MenuItem key={6} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">Dashboard</Typography>
+                                    <Typography textAlign="center" sx={{margin:'auto 5px'}}>My Products</Typography>
                                 </MenuItem>
                         
                         </Menu>
