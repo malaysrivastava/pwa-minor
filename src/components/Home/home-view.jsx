@@ -88,7 +88,7 @@ const View = ({pro}) => {
         <CardMedia
           className={classes.media}
           image={data.img}
-          title="Contemplative Reptile"
+          title={data.categories}
         />
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">

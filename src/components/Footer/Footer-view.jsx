@@ -3,115 +3,53 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 
 const View = () => {
     return (
-      <footer className='footer'>
-    <MDBFooter  className='text-center text-lg-start text-muted '>
-      <section className='d-flex justify-content-center justify-content-lg-between p-3 border-bottom'
-      style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
-        <div className='me-5 d-none d-lg-block'>
-          <span style={{ color:'tomato' }} >Get connected with us on social networks:</span>
-        </div>
-
-        <div style={{ color:'tomato' }}>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-facebook-f' ></i>
-          </a>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-twitter'></i>
-          </a>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-google'></i>
-          </a>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-instagram'></i>
-          </a>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-linkedin'></i>
-          </a>
-          <a href='/' className='me-4 text-reset'>
-            <i className='fab fa-github'></i>
-          </a>
-        </div>
-      </section>
-
-      <section className=''>
-        <div className='container text-center text-md-start mt-5'style={{ color:'tomato' }}>
-          <div className='row mt-3'>
-            <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>
-                <i className='fas fa-gem me-3'></i>Juit Olx
-              </h6>
-              <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-              </p>
-            </div>
-
-            <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'style={{ color:'tomato' }}>
-              <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Books
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Buckets
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Ball
-                </a>
-              </p>
-             
-            </div>
-
-            <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'style={{ color:'tomato' }}>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  About Us
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Pricing
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Orders
-                </a>
-              </p>
-             
-            </div>
-
-            <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4' style={{ color:'tomato' }}>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-              <p>
-                <i className='fas fa-home me-3'></i> Himachal Pradesh
-              </p>
-              <p>
-                <i className='fas fa-envelope me-3'></i>
-                juitolx@gmail.com
-              </p>
-              <p>
-                <i className='fas fa-phone me-3'></i> + 01 234 567 88
-              </p>
-              
-            </div>
+      
+      <footer class="footer-section">
+      <div class="container">
+          
+          <div class="footer-content pt-5 pb-5">
+              <div class="row">
+                  <div class="col-xl-6 col-lg-6 mb-50">
+                      <div class="footer-widget">
+                          <div class="footer-logo">
+                              <a href="index.html"><img src="../logo.png" class="img-fluid" alt="logo"/></a>
+                          </div>
+                          <div class="footer-text">
+                              <p>
+A group of JUIT students initiate to create a platform for exchanging goods for the students, to the students, by the students among the campus. </p>
+                          </div>
+                          <div class="footer-social-icon">
+                              <span>Follow us</span>
+                              <a href="#"><i class="fab fa-brands fa-github github-bg bg-secondary"></i></a>
+                              <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                              <a href="#"><i class="fab fa-linkedin bg-primary linkedin-bg"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
+                      <div class="footer-widget">
+                          <div class="footer-widget-heading">
+                              <h3>Useful Links</h3>
+                          </div>
+                          <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">about</a></li>
+                              <li><a href="#">services</a></li>
+                              <li><a href="#">portfolio</a></li>
+                              <li><a href="#">Contact</a></li>
+                              <li><a href="#">About us</a></li>
+                              <li><a href="#">Our Services</a></li>
+                              <li><a href="#">Expert Team</a></li>
+                              <li><a href="#">Contact us</a></li>
+                              <li><a href="#">Latest News</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-      </section>
-
-      <div className='text-center p-3' style={{backgroundColor: 'rgba(0, 0, 0, 0.05)',color:'tomato'}}>
-        © 2022 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          Juit Olx.com
-        </a>
       </div>
-    </MDBFooter>
-    </footer>
+      
+  </footer>
    
   )
 }

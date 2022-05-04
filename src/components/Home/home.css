@@ -1,6 +1,7 @@
 .dev_box{
-    background-color: tomato;
-    margin-top: 60px;
+    background-color: #424546;
+    margin-top: 5px;
+    margin-bottom: 0px;
     height: 35vh;
 }
 .trending_text{
@@ -26,7 +27,10 @@
 }
 .items{
     padding: 25px;
-    background-color: tomato;
+    background-color: #424546;
+}
+.home{
+    margin-bottom:5px;
 }
 
 .slider

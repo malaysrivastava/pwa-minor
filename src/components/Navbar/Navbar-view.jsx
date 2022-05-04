@@ -19,7 +19,7 @@ const View = ({handleCloseNavMenu,logOutUser,handleCloseUserMenu,handleOpenNavMe
      let history = useHistory();
      
     return (
-        <AppBar position="" style={{ background: 'tomato'}}>
+        <AppBar position="" style={{ background: '#424546'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
