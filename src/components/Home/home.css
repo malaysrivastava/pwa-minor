@@ -30,6 +30,7 @@
     background-color: #424546;
 }
 .home{
+    margin-top: 0px;
     margin-bottom:5px;
 }
 
@@ -51,7 +52,8 @@ p{
 }
 
 .cardaction{
+    padding-top: 3px;
     display: flex!important;
     justify-content: space-between;
-    color: rgb(243, 89, 42);
+    color: black;
 }

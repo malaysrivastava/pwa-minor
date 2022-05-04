@@ -25,7 +25,7 @@ const MenuProps = {
 
 const paperStyle = {
   padding: 5,
-  height: '44.5rem',
+  height: '44rem',
   width: 370,
   margin: '5px auto',
  
@@ -51,15 +51,15 @@ const theme = useTheme();
 
         </Grid>
 
-        <Grid  className="style_grid"item  md={5}>
-      <img className="grid_img" src="../Add Product.webp"/>
+        <Grid  className="style_grid" item  md={5}>
+      <img className="grid_img" src="../383460-PC0EFB-976.jpg"/>
      
       </Grid>
     <Grid item xs={12} md={3}>
       <Paper elevation={8}  style={paperStyle}>
         <Grid align="center">
           <div className="text">
-            <p>Add Product</p>
+            <p>ADD PRODUCT</p>
           </div>
         </Grid>
         <FormGroup  className="form" onSubmit={handleSubmit} noValidate autoComplete="off">

@@ -59,15 +59,15 @@ const View = ({pro}) => {
 
       const useStyles = makeStyles({
         root: {
-          maxWidth: 285,
+          maxWidth: 270,
           margin: 5
         },
         media: {
-          height: 200,
+          height: 170,
         },
         content:{
           height:40,
-          textAlign:'left',
+          textAlign:'center',
           color:'grey'
         }
       });
@@ -77,7 +77,7 @@ const View = ({pro}) => {
         <div className="home">
            
             <div className="items">
-        <h2 className="trending_text"> Top 20 trending items..</h2>
+        <h2 className="trending_text"> Trending items..</h2>
         <Slider className="slider" {...settings}>
         {
           pro && pro.map((data,key)=>
@@ -97,9 +97,9 @@ const View = ({pro}) => {
         </CardContent>
       </CardActionArea>
       <CardActions className="cardaction">
-        <h4>₹{data.price}</h4>
+        <h5>₹{data.price}</h5>
         {data.address &&
-          <h5>Address:{data.address}</h5>
+          <h5>{data.address}</h5>
         }
         
       </CardActions>

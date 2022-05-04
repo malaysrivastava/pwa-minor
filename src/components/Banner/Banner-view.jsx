@@ -11,17 +11,11 @@ const View = () => {
       }
 
     return (
-        <div>
+        <div style={{"margin-bottom":'0'}}>
  
-     <Grid container>
-     <Grid item xs={12} style={gridStyle} >
-     {/* <Paper elevation={10} style={paperStyle}> */}
-
-        
-        <img style={{'opacity':'80%',width:'100%',margin:'0',padding:'0'}} src='../Amazone.jpg' alt=""></img>
+     <Grid container> <img style={{'opacity':'80%',width:'100%',margin:'0',padding:'0'}} src='../navbar.jpeg' alt=""></img>
         {/* </Paper> */}
         </Grid>
-     </Grid>
         </div>
    
     )

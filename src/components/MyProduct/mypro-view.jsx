@@ -36,10 +36,13 @@ const MyPView=({submit,goToEdit})=>{
       sx={{
         p: 2,
         margin: 'auto',
+        color:'white',
+        fontWeight:600,
+        marginBottom:5,
         maxWidth: 700,
         flexGrow: 1,
         backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+          theme.palette.mode === 'dark' ? '#424546' : '#535656',
       }}
     >
       <Grid container spacing={2}>
@@ -57,7 +60,7 @@ const MyPView=({submit,goToEdit})=>{
               <Typography variant="body2" gutterBottom>
                 {data.desc}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.light">
                 {data.address} {data.phone && <small>Phone: {data.phone}</small>}
               </Typography>
             </Grid>
