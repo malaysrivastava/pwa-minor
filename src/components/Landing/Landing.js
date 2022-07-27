@@ -47,7 +47,7 @@ const Landing = () => {
     .then(response=>{
         console.log("Google login success")
         setData(response)
-        history.go('/')
+        history.go('https://juitolx.netlify.app/')
     })
     
   }
