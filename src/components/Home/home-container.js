@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory,useLocation } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import View from "./home-view";
 import axios from "axios";
@@ -13,6 +14,9 @@ const Home =()=>{
   const dispatch = useDispatch();
 
   const[load,setLoad] = useState(false)
+  
+  let history = useHistory();
+  let location = useLocation();
 
   const loadData = () => {
 
@@ -37,6 +41,7 @@ const pro = useSelector(state=>state.myPro)
 
 
 useEffect(async()=>{
+  history.push(location.pathname);
   setLoad(false);
   loadData();
   await wait(1000);
