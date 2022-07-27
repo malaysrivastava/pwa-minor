@@ -35,7 +35,7 @@ useEffect(()=>{
   }
 
   
-},[url])
+},[])
 
   return (
       <Router>

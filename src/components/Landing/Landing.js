@@ -47,7 +47,7 @@ const Landing = () => {
     .then(response=>{
         console.log("Google login success")
         setData(response)
-        window.location.reload();
+        history.push(location.pathname);
     })
     
   }
