@@ -16,7 +16,7 @@ const Home =()=>{
 
   const loadData = () => {
 
-    axios.get(`http://localhost:8000/api/product/?new=4`, {
+    axios.get(`https://juit-olx-app.herokuapp.com/api/product/?new=4`, {
       headers: {
         'x-auth-token': token
       }

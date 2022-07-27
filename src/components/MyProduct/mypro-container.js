@@ -18,7 +18,7 @@ const MyPro=()=>{
 
   const loadData = () => {
 
-      axios.get(`http://localhost:8000/api/product/?user_id=${id}`, {
+      axios.get(`https://juit-olx-app.herokuapp.com/api/product/?user_id=${id}`, {
         headers: {
           'x-auth-token': token
         }
@@ -36,7 +36,7 @@ const MyPro=()=>{
   let history = useHistory();
 
   const deleteProduct=(id)=>{
-    axios.delete(`http://localhost:8000/api/product/delP/?id=${id}`,{
+    axios.delete(`https://juit-olx-app.herokuapp.com/api/product/delP/?id=${id}`,{
       headers:{
         'x-auth-token':token
       }
@@ -70,7 +70,7 @@ const MyPro=()=>{
 
   const goToEdit=(id)=>{
        console.log("hhh")
-      axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
+      axios.get(`https://juit-olx-app.herokuapp.com/api/product/idby/?id=${id}`, {
         headers: {
           'x-auth-token': token
         }

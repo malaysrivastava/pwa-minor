@@ -16,7 +16,7 @@ const ViewImage = () => {
   const {id} = useParams()
 
   const loadData=(id)=>{
-      axios.get(`http://localhost:8000/api/product/idby/?id=${id}`, {
+      axios.get(`https://juit-olx-app.herokuapp.com/api/product/idby/?id=${id}`, {
           headers: {
             'x-auth-token': token
           }
@@ -39,7 +39,7 @@ const ViewImage = () => {
   console.log(iiid)                  
       axios({
           method:"POST",
-          url:"http://localhost:8000/api/product/addW",
+          url:"https://juit-olx-app.herokuapp.com/api/product/addW",
           headers: {
               'x-auth-token': token
           },

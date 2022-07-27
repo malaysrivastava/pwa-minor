@@ -122,7 +122,7 @@ const theme = useTheme();
       
         axios({
             method:"PUT",
-            url:`http://localhost:8000/api/product/editP/?id=${id}`,
+            url:`https://juit-olx-app.herokuapp.com/api/product/editP/?id=${id}`,
             headers: {
                 'x-auth-token': token
             },

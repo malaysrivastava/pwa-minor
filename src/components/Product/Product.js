@@ -19,9 +19,9 @@ const Product = () => {
 
     let url;
     if(type.length > 0){
-      url = `http://localhost:8000/api/product/${type}`
+      url = `https://juit-olx-app.herokuapp.com/api/product/${type}`
     } else{
-      url = `http://localhost:8000/api/product/`
+      url = `https://juit-olx-app.herokuapp.com/api/product/`
     }
 
     console.log(url)

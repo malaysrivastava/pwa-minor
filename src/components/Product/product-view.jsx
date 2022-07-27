@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
   content:{
     height:40,
-    textAlign:'left',
+    textAlign:'center',
     color:'grey'
   }
 });

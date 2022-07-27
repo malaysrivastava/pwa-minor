@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 const View = ({pro,addtoWish}) => {
 
     return (
-        <div className="container mt-100">
+        <div className="container mt-100" style={{'margin-top':'2rem','margin-bottom':'2rem'}}>
         <div className="row">
             <div className="col-6">
                 <div className="details__image">

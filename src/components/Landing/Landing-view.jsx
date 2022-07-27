@@ -54,7 +54,7 @@ const Lview = ({responseSuccessGoogle,responseErrorGoogle}) => {
   
         <GoogleLogin
             clientId="233905196668-6010oh4hlatb7bna850l7tu8tc4hj2v4.apps.googleusercontent.com"
-            buttonText="Login with Gsuite"
+            buttonText="Login with Google"
             onSuccess={responseSuccessGoogle}
             onFailure={responseErrorGoogle}
             cookiePolicy={'single_host_origin'}
