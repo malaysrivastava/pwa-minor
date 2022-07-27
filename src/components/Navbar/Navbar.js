@@ -30,7 +30,7 @@ const Navbar = () => {
     };
     const logOutUser = ()=>{
       localStorage.setItem("Token","dfdxfdf");
-      history.go('/login')
+      history.push('/login')
     }
 
     const handleCloseUserMenu = () => {
