@@ -43,7 +43,7 @@ const Wishlist=()=>{
     })
     .then((res)=>{
       console.log(res,"Product deleted")
-      history.go(0);
+      history.push('/wish');
 
     })
     .catch((error)=>{
@@ -62,7 +62,7 @@ const Wishlist=()=>{
         },
         {
           label: 'No',
-          onClick: () => history.go(0)
+          onClick: () => history.push('/wish')
         }
       ]
     });
