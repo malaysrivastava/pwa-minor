@@ -1,13 +1,13 @@
 import React,{useState,useEffect} from 'react';
 import axios from "axios";
 import Lview from './Landing-view';
-import { useHistory } from 'react-router-dom';
+import { useHistory,useLocation } from 'react-router-dom';
 import jwt from 'jsonwebtoken'
 
 const Landing = () => {
 
   let history = useHistory()
-  
+  let location = useLocation();
 
   const [log,setLog] = useState(false);
   
@@ -47,7 +47,7 @@ const Landing = () => {
     .then(response=>{
         console.log("Google login success")
         setData(response)
-        history.goBack()
+        history.push(location.pathname);
     })
     
   }

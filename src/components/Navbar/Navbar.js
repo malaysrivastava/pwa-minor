@@ -1,13 +1,15 @@
 import React from 'react';
-import { useHistory,Link } from 'react-router-dom';
+import { useHistory,Link,useLocation } from 'react-router-dom';
 import View from './Navbar-view';
 import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const Navbar = () => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   let history = useHistory()
+  let location = useLocation();
   const dispath = useDispatch();
 
     const handleOpenNavMenu = (event) => {
