@@ -52,7 +52,7 @@ const theme = useTheme();
         </Grid>
 
         <Grid  className="style_grid" item  md={5}>
-      <img className="grid_img" src="../383460-PC0EFB-976.jpg"/>
+      <img className="grid_img" src="../383460-PC0EFB-976.jpeg"/>
      
       </Grid>
     <Grid item xs={12} md={3}>

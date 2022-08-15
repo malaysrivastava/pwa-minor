@@ -24,7 +24,7 @@ const App = () => {
 useEffect(()=>{
   const currentUrl = window.location.href;
   setUrl(currentUrl);
-  if(currentUrl == `https://juitolx.netlify.app/login`){
+  if(currentUrl == `https://juitolx.netlify.app/login` || currentUrl == `https://juitolx.netlify.app/login`){
     setIsloginpage(true);
     console.log(Isloginpage)
   }
