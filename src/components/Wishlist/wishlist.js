@@ -18,12 +18,13 @@ const Wishlist=()=>{
 
   const loadData = () => {
 
-      axios.get(`https://juit-olx-app.herokuapp.com/api/product//Widby/?userMail=${mail}`, {
+      axios.get(`https://juitolx-malay.b4a.run/api/product//Widby/?userMail=${mail}`, {
         headers: {
           'x-auth-token': token
         }
       })
       .then((res) => {
+        console.log(res)
         dispatch(product_in(res.data))
       })
       .catch((error) => {
@@ -36,7 +37,7 @@ const Wishlist=()=>{
   let history = useHistory();
 
   const deleteProduct=(id)=>{
-    axios.delete(`https://juit-olx-app.herokuapp.com/api/product/delW/?id=${id}`,{
+    axios.delete(`https://juitolx-malay.b4a.run/api/product/delW/?id=${id}`,{
       headers:{
         'x-auth-token':token
       }

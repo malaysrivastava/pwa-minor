@@ -19,9 +19,9 @@ const Product = () => {
 
     let url;
     if(type.length > 0){
-      url = `https://juit-olx-app.herokuapp.com/api/product/${type}`
+      url = `https://juitolx-malay.b4a.run/api/product/${type}`
     } else{
-      url = `https://juit-olx-app.herokuapp.com/api/product/`
+      url = `https://juitolx-malay.b4a.run/api/product/`
     }
 
     console.log(url)

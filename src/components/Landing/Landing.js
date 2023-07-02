@@ -41,7 +41,7 @@ const Landing = () => {
     
     axios({
         method:"POST",
-        url:"https://juit-olx-app.herokuapp.com/api/auth/googlelogin/",
+        url:"https://juitolx-malay.b4a.run/api/auth/googlelogin/",
         data:{tokenId:response.tokenId}
     })
     .then(response=>{

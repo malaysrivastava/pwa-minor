@@ -92,7 +92,7 @@ const AddP=()=>{
                   
                     axios({
                         method:"POST",
-                        url:"https://juit-olx-app.herokuapp.com/api/product/addP",
+                        url:"https://juitolx-malay.b4a.run/api/product/addP",
                         headers: {
                             'x-auth-token': token
                         },
