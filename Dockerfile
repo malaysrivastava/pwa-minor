@@ -1,20 +1,19 @@
-# Use Node 16 alpine as parent image
-FROM node:18-alpine
+FROM node:18
 
-# Change the working directory on the Docker image to /app
+
+# Create app directory
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the /app directory
-COPY package.json package-lock.json ./
-
-# Install dependencies
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+# RUN npm cache clean --force
+COPY package*.json ./
 RUN npm install
+# RUN npm install --check-files
+# If you are building your code for production
+# RUN npm ci --only=production
 
-# Copy the rest of project files into this image
+# Bundle app source
 COPY . .
-
-# Expose application port
-EXPOSE 8000
-
-# Start the application
-CMD npm start
+CMD [ "npm", "run", "start" ]
+EXPOSE 8000/tcp
