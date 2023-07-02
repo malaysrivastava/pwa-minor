@@ -74,7 +74,7 @@ const theme = useTheme();
           MenuProps={MenuProps}
           style={{padding:'10px'}}
         >
-          {Category.map((cat) => (
+          {Category?.map((cat) => (
             <MenuItem
               key={cat}
               value={cat}

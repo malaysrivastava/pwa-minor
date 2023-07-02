@@ -30,7 +30,7 @@ const MyPView=({submit,goToEdit})=>{
 
     if(show && pro){
        return (<>
-         {pro.map((data,index) => (
+         {pro?.map((data,index) => (
             <Paper
       key={index}      
       sx={{

@@ -42,7 +42,7 @@ const classes = useStyles();
 
     <Grid container spacing={1}  >
     {
-      pro && pro.map((data,key)=>
+      pro && pro?.map((data,key)=>
     
         <Grid item key={key} xs={12} md={3}  >
         <Link to={`/viewImage/${data._id}`}>

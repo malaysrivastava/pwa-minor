@@ -213,7 +213,7 @@ const theme = useTheme();
             onChange={handleChange('categories')}
           MenuProps={MenuProps}
         >
-          {Category.map((cat) => (
+          {Category?.map((cat) => (
             <MenuItem
               key={cat}
               value={cat}

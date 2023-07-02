@@ -81,7 +81,7 @@ const View = ({pro}) => {
         <h2 className="trending_text"> Trending items..</h2>
         <Slider className="slider" {...settings}>
         {
-          pro && pro.map((data,key)=>
+          pro && pro?.map((data,key)=>
 
           <Link to={`/viewImage/${data._id}`}>
             <Card key={key} className={classes.root}>
