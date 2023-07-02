@@ -13,6 +13,7 @@ app.use(express.json())
 app.use(cors())
 connect();
 //uploadFile()
+app.get('/',()=>console.log('Application running fine'))
 app.use('/api/auth',authRoutes)
 app.use('/api/product',proRoutes)
 app.use('/api/admin',adMinRoutes);
